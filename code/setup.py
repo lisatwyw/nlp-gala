@@ -12,10 +12,9 @@ try:
 except:
   if 'ipykernel' in os.environ['MPLBACKEND']:
     INTERACTIVE = 2
-    !mkdir /content/drive/MyDrive/R4G-2023-11-20/mypackages
+    os.mkdir('/content/drive/MyDrive/R4G-2023-11-20/mypackages')
     package_dir = '/content/drive/MyDrive/R4G-2023-11-20/mypackages'
     folder = '/content/drive/MyDrive/R4G-2023-11-20/'
-
 
 gpus = tf.config.list_physical_devices('GPU')
 

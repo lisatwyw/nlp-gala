@@ -6,16 +6,22 @@ import subprocess, sys, os
 import tensorflow as tf
 from time import time
 
-try:
-  INTERACTIVE = os.environ['KAGGLE_KERNEL_RUN_TYPE'] == 'Interactive'
-  package_dir = '../working/mypackages'
-except:
-  if 'ipykernel' in os.environ['MPLBACKEND']:
-    INTERACTIVE = 2
-    os.mkdir('/content/drive/MyDrive/R4G-2023-11-20/mypackages')
-    package_dir = '/content/drive/MyDrive/R4G-2023-11-20/mypackages'
-    folder = '/content/drive/MyDrive/R4G-2023-11-20/'
+def environ():
+  try:
+    INTERACTIVE = os.environ['KAGGLE_KERNEL_RUN_TYPE'] == 'Interactive'
+    package_dir = '../working/mypackages'
+  except:
+    if 'ipykernel' in os.environ['MPLBACKEND']:
+      INTERACTIVE = 2
+      try:
+        os.mkdir('/content/drive/MyDrive/R4G-2023-11-20/mypackages')
+      except:
+        pass
+      package_dir = '/content/drive/MyDrive/R4G-2023-11-20/mypackages'
+      folder = '/content/drive/MyDrive/R4G-2023-11-20/'
+    return folder, package_dir, INTERACTIVE
 
+folder, package_dir, INTERACTIVE = environ()
 gpus = tf.config.list_physical_devices('GPU')
 
 import multiprocessing as mp

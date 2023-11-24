@@ -20,7 +20,7 @@ Replace ```yourusername``` with your's
 |||
 
 ### Allocations	
--004 -- without resource application - narval-storage → 1 TB Project Storage
--003 -- without resource application - beluga-storage → 1 TB Project Storage
--002 -- without resource application - graham-storage → 1 TB Project Storage
--001 -- without resource application - cedar-storage → 1 TB Project Storage
+- 004 -- without resource application - narval-storage → 1 TB Project Storage
+- 003 -- without resource application - beluga-storage → 1 TB Project Storage
+- 002 -- without resource application - graham-storage → 1 TB Project Storage
+- 001 -- without resource application - cedar-storage → 1 TB Project Storage

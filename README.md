@@ -13,11 +13,11 @@ Replace ```yourusername``` with your's
 
 ### Login links
 
-| Login | Max memory (MB) | Max run time |
-| :-- | :-- | :-- |
-| https://jupyterhub.cedar.computecanada.ca/ |  63000 | |
-| https://jupyterhub.beluga.computecanada.ca/ | 47750 | |
-| https://jupyterhub.narval.computecanada.ca/ | 80000 | 8 |
+| Login | Max memory (MB) | Max run time | GRU(s)? |
+| :-- | :-- | :-- | :-- |
+| https://jupyterhub.cedar.computecanada.ca/ |  63000 | | |
+| https://jupyterhub.beluga.computecanada.ca/ | 47750 | | | 
+| https://jupyterhub.narval.computecanada.ca/ | 80000 | 8 | 1x A700 |  
 
 ### Allocations	
 - 004 -- without resource application - narval-storage → 1 TB Project Storage

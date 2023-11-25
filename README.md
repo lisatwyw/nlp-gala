@@ -22,7 +22,9 @@ Replace ```yourusername``` with your's
 - 002 -- without resource application - graham-storage → 1 TB Project Storage
 - 001 -- without resource application - cedar-storage → 1 TB Project Storage
 
-###
+### Getting started on clusters
+
+Once logged in:
 ```
 module load python/
 python3 -m venv tf2.15
@@ -31,4 +33,13 @@ pip3 install tensorflow torch matplotlib pandas
 pip3 install lifelines scikit-survival # survival data analyses
 pip3 transformers # for NLP (sentence-transformer)
 pip3 install -U space[cuda122] spacytextblob # NLIP
+```
+
+When in ipython or python:
+```
+import sys, os
+if 'narval' in os.environ['CC_CLUSTER']:
+    os.chdir('/lustre06/project/6088123/myusername/opensource/physionet.org/files/mimic-iv-note/2.2/note') # replace myusername with yours 
+elif 'beluga' in os.environ['CC_CLUSTER']:
+    os.chdir('/home/myusername/datasets/mimic-iv-note/2.2/note') # replace myusername with yours
 ```

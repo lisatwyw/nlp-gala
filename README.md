@@ -32,7 +32,7 @@ source ~/tf2.15/bin/activate
 pip3 install tensorflow torch matplotlib pandas
 pip3 install lifelines scikit-survival # survival data analyses
 pip3 transformers # for NLP (sentence-transformer)
-pip3 install -U space[cuda122] spacytextblob # NLIP
+pip3 install -U space[cuda122] spacytextblob nltk vader # NLIP
 ```
 
 When in ipython or python:

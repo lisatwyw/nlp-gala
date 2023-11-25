@@ -1,15 +1,12 @@
 # nlp-gala
 
-
-
-## Servers
+## Option 1: Servers
 
 Replace ```yourusername``` with your's
 - https://sfu.syzygy.ca/jupyter/user/yourusername/lab
+- https://ubc.syzygy.ca/jupyter/user/yourusername/lab
 
-
-
-## Digital Research Alliance 
+## Option 2: Digital Research Alliance 
 
 ### Login links
 
@@ -24,3 +21,12 @@ Replace ```yourusername``` with your's
 - 003 -- without resource application - beluga-storage → 1 TB Project Storage
 - 002 -- without resource application - graham-storage → 1 TB Project Storage
 - 001 -- without resource application - cedar-storage → 1 TB Project Storage
+
+###
+```
+module load python/
+python3 -m venv tf2.15
+source ~/tf2.15/bin/activate
+pip3 install tensorflow torch matplotlib lifelines scikit-survival pandas
+pip3 install -U space[cuda122] spacytextblob
+```

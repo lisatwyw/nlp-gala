@@ -39,7 +39,7 @@ pip3 transformers # NLP: sentence-transformer
 pip3 install -U space[cuda122] spacytextblob nltk vader # NLP
 
 pip3 install seaborn matplotlib  plotly
-pip3 install arrow
+pip3 install pandas
 ```
 
 When in ipython or python:

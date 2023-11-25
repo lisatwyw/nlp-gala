@@ -27,6 +27,6 @@ Replace ```yourusername``` with your's
 module load python/
 python3 -m venv tf2.15
 source ~/tf2.15/bin/activate
-pip3 install tensorflow torch matplotlib lifelines scikit-survival pandas
+pip3 install tensorflow torchvision matplotlib lifelines scikit-survival pandas
 pip3 install -U space[cuda122] spacytextblob
 ```

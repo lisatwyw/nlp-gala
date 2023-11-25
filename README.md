@@ -29,10 +29,17 @@ Once logged in:
 module load python/
 python3 -m venv tf2.15
 source ~/tf2.15/bin/activate
-pip3 install tensorflow torch matplotlib pandas
+
+pip3 install tensorflow torch
+pip3 install polars pandas # database
+
 pip3 install lifelines scikit-survival # survival data analyses
-pip3 transformers # for NLP (sentence-transformer)
-pip3 install -U space[cuda122] spacytextblob nltk vader # NLIP
+
+pip3 transformers # NLP: sentence-transformer
+pip3 install -U space[cuda122] spacytextblob nltk vader # NLP
+
+pip3 install seaborn matplotlib  plotly
+pip3 install pyarrow
 ```
 
 When in ipython or python:

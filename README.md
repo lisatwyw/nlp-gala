@@ -32,6 +32,7 @@ source ~/tf2.15/bin/activate
 
 pip3 install tensorflow torch
 pip3 install polars pandas # database
+pip install -U kaleido # save ploty figure 
 
 pip3 install lifelines scikit-survival # survival data analyses
 
@@ -49,4 +50,5 @@ if 'narval' in os.environ['CC_CLUSTER']:
     os.chdir('/lustre06/project/6088123/myusername/opensource/physionet.org/files/mimic-iv-note/2.2/note') # replace myusername with yours 
 elif 'beluga' in os.environ['CC_CLUSTER']:
     os.chdir('/home/myusername/datasets/mimic-iv-note/2.2/note') # replace myusername with yours
+
 ```

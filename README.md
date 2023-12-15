@@ -26,21 +26,20 @@ Replace ```yourusername``` with your's
 
 Once logged in:
 ```
-module load python/
+module load StdEnv/2023 cudacore/.12.2.2
 python3 -m venv tf2.15
 source ~/tf2.15/bin/activate
 
-pip3 install tensorflow torch
-pip3 install polars pandas # database
-pip install -U kaleido # save ploty figure 
+python3 -m pip install tensorflow torch
+python3 -m pip install polars pandas # database
+python3 -m pip install plotly kaleido # save ploty figure 
 
-pip3 install lifelines scikit-survival # survival data analyses
+python3 -m pip  install lifelines scikit-survival # survival data analyses
 
-pip3 transformers # NLP: sentence-transformer
-pip3 install -U space[cuda122] spacytextblob nltk vader # NLP
+python3 -m pip  transformers # NLP: sentence-transformer
+python3 -m pip  install -U space[cuda122] spacytextblob nltk vader # NLP
 
-pip3 install seaborn matplotlib  plotly
-pip3 install pandas
+python3 -m pip  install seaborn matplotlib  plotly
 ```
 
 When in ipython or python:

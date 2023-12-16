@@ -46,7 +46,7 @@ When in ipython or python:
 ```
 import sys, os
 if 'narval' in os.environ['CC_CLUSTER']:
-    os.chdir('/lustre06/project/6088123/myusername/opensource/physionet.org/files/mimic-iv-note/2.2/note') # replace myusername with yours 
+    os.chdir('/lustre06/project/60881234/myusername/opensource/physionet.org/files/mimic-iv-note/2.2/note') # replace 60881234 and myusername with those of yours 
 elif 'beluga' in os.environ['CC_CLUSTER']:
     os.chdir('/home/myusername/datasets/mimic-iv-note/2.2/note') # replace myusername with yours
 

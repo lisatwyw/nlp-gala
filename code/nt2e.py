@@ -381,9 +381,9 @@ def get_cohort():
         print( '\n\n', s[3], '\n', s[-2], '\n',s[-1] )
     return Big
 
-Big = get_cohort()
 
-    
+
+Big = get_cohort()  
 
 def get_pipe():
     tokenizer = BertTokenizerFast.from_pretrained(names[emb])
@@ -417,9 +417,9 @@ def embed(model, model_type, sentences):
     return embeddings
 
 n = Big.shape[0]
-
 EMB=[1,2,3,4,6]
 RDIMS = [4]
+rdim = RDIMS[0] 
 
 T = ['trn1', 'trn2', 'val', 'tst']
 
@@ -467,7 +467,7 @@ if 0:
             pickle.dump( {"embeddings": res, 'cpsc_case_nums':cpsc_case_nums} , handle)
         print( emb, -(starttime - time())/60/60 , 'hours' )
 
-if 1:
+elif 1:
     d = pd.read_pickle( inter_dir+f'WordEmb1_n{n}_d768.pkl' )
     embeddings[1]=d['embeddings']
     d = pd.read_pickle( inter_dir+f'WordEmb2_n{n}_d384.pkl' )
@@ -633,3 +633,40 @@ def run_xgb_optuna( T, emb, X, surv_inter, output_file ):
     today = date.today()
     bst.save_model( output_file )
     return res    
+
+
+for DEFN in [1,2]:
+    event_indicator, time2event, surv_inter, surv_str = get_surv( surv_pols, DEFN )
+
+    pos_ratio = 1-np.isinf( surv_inter['trn1']['label_upper_bound'] ).sum() / surv_inter['trn1'].shape[0]
+    print( 'pos-neg-ratio:', pos_ratio, n_trials, 'trials during Optuna search' )
+
+    
+
+    for input_type in [39,49,21,22,23,24,19]: # do 19 at the end, if mem/ RAM permits
+        X,res ={},{}
+        T = ['trn1','trn2','val','tst']
+        if input_type == 11:
+          T = ['trn1','trn2','val']
+        for t in T: # construct an input combination
+            if input_type==19:
+                X[t] = np.hstack( (Embeddings[1,t],Embeddings[2,t],Embeddings[3,t],Embeddings[4,t] ) )
+                inp_str = f'{input_type}_all'
+            elif input_type == 39:
+                X[t] = np.hstack( (we_reduced[1,t,rdim], we_reduced[2,t,rdim], we_reduced[3,t,rdim], we_reduced[4,t,rdim] ) )
+                print( 'All avail dimensionality reduced word embedding', )
+                inp_str = f'{input_type}_all_rdims{rdim}'
+            elif input_type == 49:
+                X[t] = np.hstack( (we_reduced[1,t,rdim], we_reduced[2,t,rdim], we_reduced[3,t,rdim], we_reduced[4,t,rdim], surv_pols[t][att].to_pandas() ) )
+                print( 'All avail dimensionality reduced word embedding with', att )
+                inp_str = f'{input_type}_k{len(att)}_all_rdims{rdim}'
+
+            elif input_type >= 21: # dim reduced versions for comparison with Cox regression to be done next code block
+                rr = input_type % 10
+                inp_str = f'{input_type}_k{len(att)}_emb{rr}_rdims{rdim}'
+                X[t] = np.hstack( (we_reduced[rr,t,rdim], surv_pols[t][att].to_pandas() ) )
+                print( f'Dimensionality reduced word embedding {rr} with', att )
+
+        output_file=f'{res_dir}/outcome{DEFN}_xgb-aft_inp{inp_str}.json'
+        res = run_xgb_optuna( T, input_type, X, surv_inter, output_file )
+        print( output_file )

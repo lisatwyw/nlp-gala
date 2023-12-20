@@ -467,7 +467,7 @@ if 0:
             pickle.dump( {"embeddings": res, 'cpsc_case_nums':cpsc_case_nums} , handle)
         print( emb, -(starttime - time())/60/60 , 'hours' )
 
-if 0:
+if 1:
     d = pd.read_pickle( inter_dir+f'WordEmb1_n{n}_d768.pkl' )
     embeddings[1]=d['embeddings']
     d = pd.read_pickle( inter_dir+f'WordEmb2_n{n}_d384.pkl' )
@@ -490,4 +490,146 @@ if 0:
 if ('we_reduced' in globals())==False:
     we_reduced, reducers = {}, {}
 
-    
+
+# convert string (categorical) attributes to numeric
+mapping_inv={}
+for k in mapping.keys():
+    mapping_inv[k]  = {v: k for k, v in mapping[k].items()}
+att = []
+for k in ['location', 'race', 'sex', 'body_part', 'product_1', 'product_2', 'drug', 'alcohol' ]:
+    k2 = k+'_numeric'
+    Big = Big.with_columns(
+      pol.col( k )
+      .map_dict( mapping_inv[k]).alias( k2 )  )
+    att.append( k2)
+print( Big.sample(11).to_pandas().transpose() )
+
+att += ['month']
+
+surv_pols = {}
+for t in T:
+    surv_pols[t] = Big[ Inds[t], : ]
+    surv_pols[t]= surv_pols[t].with_columns([
+        pol.col("narrative").str.lengths().alias("narrative_len")
+    ])
+    print(t, surv_pols[t].shape )
+    if 0:
+        fig=px.histogram( surv_pols[t].to_pandas(),'narrative_len')
+        fig.show()
+
+
+def get_surv( dff, DEFN = 2 ):
+    ev,time,surv_inter,surv_str={},{},{},{}
+    if DEFN==1:
+        thres=3 # treated
+    elif DEFN==2:
+        thres=5 # hosp/ died
+    k = 'time2event'
+    for t in T:
+        df=dff[t].to_pandas()
+        surv_inter[t]=pd.DataFrame( {'label_lower_bound': df[k] ,
+                                     'label_upper_bound': df[k] } )
+        if DEFN==3:
+            q=np.where(  df['severity'] < thres )[0] # unseen + observed
+            ev[t] = ( df['severity'] >= thres ).values
+        else:
+            q=np.where(  df['severity'] < thres )[0] # unseen + observed
+            ev[t] = ( df['severity'] >= thres ).values
+
+        surv_inter[t].iloc[q, 1] = np.inf
+        print(t, np.sum(ev[t])/ len(ev[t]), 'n=',len(ev[t]) )
+        time[t] = ( df[k]  ).values
+        surv_str[t]=Surv.from_arrays(ev[t], time[t])
+    return ev, time, surv_inter, surv_str
+
+
+
+for t in T:
+    print( np.where( surv_pols[t][:,-2] <=0 ) )
+for t in T:
+    fig= plt.figure()
+    fig = px.histogram( surv_pols[t][:,-2].to_pandas() );
+    fig.show()
+
+# ====================== optimization ======================
+
+
+
+def run_xgb_optuna( T, emb, X, surv_inter, output_file ):
+    ds = {}
+    base_params = {'verbosity': 0,
+                  'objective': 'survival:aft',
+                  'eval_metric': 'aft-nloglik',
+                  'tree_method': 'hist'}  # Hyperparameters common to all trials
+
+    samp_choices = ['uniform']
+    for t in T:
+        ds[t] = xgb.DMatrix( X[t])
+        print(t)
+        # see details https://xgboost.readthedocs.io/en/stable/tutorials/aft_survival_analysis.html
+        ds[t].set_float_info('label_lower_bound', surv_inter[t]['label_lower_bound'] )
+        ds[t].set_float_info('label_upper_bound', surv_inter[t]['label_upper_bound'] )
+
+    if gpus:
+        base_params.update( {'tree_method': 'gpu_hist', 'device':'cuda', } )
+        samp_choices = ['gradient_based','uniform']
+
+    def tuner(trial):
+        params = {'learning_rate': trial.suggest_float('learning_rate', 0.001, 1.0),
+                  'aft_loss_distribution': trial.suggest_categorical('aft_loss_distribution',
+                                                                      ['normal', 'logistic', 'extreme']),
+                  'aft_loss_distribution_scale': trial.suggest_float('aft_loss_distribution_scale', 0.1, 10.0),
+                  'max_depth': trial.suggest_int('max_depth', 3, 10),
+                  'booster': trial.suggest_categorical('booster',['gbtree','dart',]),
+                  'scale_pos_weight': trial.suggest_float('scale_pos_weight', pos_ratio*0.1, 10*pos_ratio ),  # L1 reg on weights
+                  'alpha': trial.suggest_float('alpha', 1e-8, 10 ),  # L1 reg on weights
+                  'lambda': trial.suggest_float('lambda', 1e-8, 10 ),  # L2 reg on weights
+                  'eta': trial.suggest_float('eta', 0, 1.0),  # step size
+                  'sampling_method': trial.suggest_categorical('sampling_method', samp_choices ),
+                  'subsample': trial.suggest_float('subsample', 0.01, 1 ),
+                  'gamma': trial.suggest_float('gamma', 1e-8, 10)  # larger, more conservative; min loss reduction required to make leaf
+        }
+        params.update(base_params)
+        pruning_callback = optuna.integration.XGBoostPruningCallback(trial, 'valid-aft-nloglik')
+        bst = xgb.train(params, ds['trn1'], num_boost_round=10000,
+                        evals=[(ds['trn1'], 'train'), (ds['trn2'], 'valid')],  # <---- data matrices
+                        early_stopping_rounds=50, verbose_eval=False, callbacks=[pruning_callback])
+        if bst.best_iteration >= 25:
+            return bst.best_score
+        else:
+            return np.inf  # Reject models with < 25 trees
+
+    # Run hyperparameter search
+    study = optuna.create_study(direction='minimize')
+    study.optimize( tuner, n_trials= n_trials )
+    print('Completed hyperparameter tuning with best aft-nloglik = {}.'.format(study.best_trial.value))
+    params = {}
+    params.update(base_params)
+    params.update(study.best_trial.params)
+
+    print('Re-running the best trial... params = {}'.format(params))
+    bst = xgb.train(params, ds['trn1'], num_boost_round=10000, verbose_eval=False,
+                    evals=[(ds['trn1'], 'train'), (ds['trn2'], 'valid')],
+                    early_stopping_rounds=50)
+
+    # Explore hyperparameter search space
+    fig = optuna.visualization.plot_param_importances(study)
+    fig.show()
+
+    for t in T:
+        res[t]= pd.DataFrame({'Label (lower bound)': surv_inter[t]['label_lower_bound'],
+                    'Label (upper bound)': surv_inter[t]['label_upper_bound'],
+                    'Predicted label': bst.predict(ds[t]) } )
+        sp=scipy.stats.spearmanr( res[t].iloc[:,-2], res[t].iloc[:,-1] )
+        c=concordance_index_censored( event_time = time2event[t], event_indicator = event_indicator[t] , estimate=1/res[t].iloc[:,-1] )
+
+        print(t.upper(), f'| R2:{sp[0]:.3f}; p:{sp[1]:.4} | C:{c[0]*100:.2f} ', end='|' )
+
+        labels = ['3h','6h','9h','12h','15h','18h','24h','48h','72h', '1wk','2wks','1mon']
+        for d,h in enumerate([3,6,9,12,15,18,24,49,73, 7*24+1, 7*24*2+1, 7*24*4+1 ]):
+            bs = brier_score( surv_str['trn1'], surv_str[t], estimate=1/res[t].iloc[:,-1], times=[h] )
+            print( end=f'{labels[d]}:{bs[1][0]:.3f} |' )
+        print()
+    today = date.today()
+    bst.save_model( output_file )
+    return res    

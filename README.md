@@ -8,4 +8,4 @@ Replace ```yourusername``` with your's
 
 ## Option 2: Digital Research Alliance 
 
-[Digital Research Alliance; new users require sponsorship](misc/DRA.md)
+[Digital Research Alliance; new users require sponsorship](info/DRA.md)

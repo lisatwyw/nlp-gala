@@ -491,7 +491,16 @@ elif 1:
 
         
 
-if ('we_reduced' in globals())==False:
+try:
+    for e in EMB:        
+        starttime = time()
+        for r in RDIMS:
+            reduced_filename = inter_dir + f'/reduced_emb{e}_{r}rdims.pkl'    
+            with open( reduced_filename, 'rb') as handle:
+                d=pickle.load( handle )
+            we_reduced[e]=d['we_reduced']
+        print( 'finished in', -(starttime - time())/ 60, 'min' )
+except:
     we_reduced, reducers = {}, {}
     SEED=119
     t = 'trn1'
@@ -522,7 +531,6 @@ if ('we_reduced' in globals())==False:
     
         with open( reduced_filename, 'wb') as handle:
             pickle.dump( {"we_reduced": we_reduced[e]}, handle)
-
 
 # convert string (categorical) attributes to numeric
 mapping_inv={}
@@ -586,7 +594,8 @@ for t in T:
 
 # ====================== optimization ======================
 
-
+gpus = tf.config.list_physical_devices('GPU')
+gpus
 
 def run_xgb_optuna( T, emb, X, surv_inter, output_file ):
     ds = {}

@@ -502,7 +502,7 @@ if ('we_reduced' in globals())==False:
             reducers[e,r] = umap.UMAP(
             n_neighbors=25,
             min_dist=0.01,
-            n_components=rdims,
+            n_components=r,
             random_state=SEED ).fit( Embeddings[e,t] )
             print('Reducing word embedding', e, 'via UMAP')
                 
@@ -511,11 +511,12 @@ if ('we_reduced' in globals())==False:
             reduced_filename = inter_dir + '/reduced_emb{e}_{r}rdims.pkl'            
             for t in T:
                 try:
-                    we_reduced[e];
+                    we_reduced[e]
                 except:
                     we_reduced[e] = {}
                 we_reduced[e][t,r]= reducers[e,r].transform( Embeddings[e,t] )
                 print(e, we_reduced[e].keys() )
+                
     with open( reduced_filename, 'wb') as handle:
         pickle.dump( {"we_reduced": we_reduced[e]}, handle)
 

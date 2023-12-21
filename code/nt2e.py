@@ -45,7 +45,11 @@ except:
     pass  
 # emb=6
 from torch.multiprocessing import Pool, Process, set_start_method    
-from transformers import BertModel, BertTokenizerFast
+
+try:
+    from transformers import BertModel, BertTokenizerFast
+except:
+    pass
 
 import umap, optuna  
 

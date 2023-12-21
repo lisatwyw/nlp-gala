@@ -493,20 +493,22 @@ elif 1:
 
 if ('we_reduced' in globals())==False:
     we_reduced, reducers = {}, {}
-
     SEED=119
     t = 'trn1'
     for r in RDIMS:
         # use more than 2 dims per https://programminghistorian.org/en/lessons/clustering-visualizing-word-embeddings
         for e in EMB:
+            starttime = time()
             reducers[e,r] = umap.UMAP(
             n_neighbors=25,
             min_dist=0.01,
             n_components=r,
             random_state=SEED ).fit( Embeddings[e,t] )
             print('Reducing word embedding', e, 'via UMAP')
+            print( 'finished in',-(starttime - time())/ 60, 'min' )
                 
     for e in EMB:        
+        starttime = time()
         for r in RDIMS:
             reduced_filename = inter_dir + f'/reduced_emb{e}_{r}rdims.pkl'            
             for t in T:
@@ -516,9 +518,10 @@ if ('we_reduced' in globals())==False:
                     we_reduced[e] = {}
                 we_reduced[e][t,r]= reducers[e,r].transform( Embeddings[e,t] )
                 print(e, we_reduced[e].keys() )
-                
-    with open( reduced_filename, 'wb') as handle:
-        pickle.dump( {"we_reduced": we_reduced[e]}, handle)
+        print( 'finished in',-(starttime - time())/ 60, 'min' )
+    
+        with open( reduced_filename, 'wb') as handle:
+            pickle.dump( {"we_reduced": we_reduced[e]}, handle)
 
 
 # convert string (categorical) attributes to numeric
@@ -530,7 +533,7 @@ for k in ['location', 'race', 'sex', 'body_part', 'product_1', 'product_2', 'dru
     k2 = k+'_numeric'
     Big = Big.with_columns(
       pol.col( k )
-      .map_dict( mapping_inv[k]).alias( k2 )  )
+      .map_dict( mapping_inv[k] ).alias( k2 )  )
     att.append( k2)
 print( Big.sample(11).to_pandas().transpose() )
 
@@ -669,32 +672,34 @@ for DEFN in [1,2]:
     event_indicator, time2event, surv_inter, surv_str = get_surv( surv_pols, DEFN )
 
     pos_ratio = 1-np.isinf( surv_inter['trn1']['label_upper_bound'] ).sum() / surv_inter['trn1'].shape[0]
-    print( 'pos-neg-ratio:', pos_ratio, n_trials, 'trials during Optuna search' )
-
+    print( 'pos-neg-ratio:', pos_ratio, n_trials, 'trials during Optuna search')
     
-
-    for input_type in [39,49,21,22,23,24,19]: # do 19 at the end, if mem/ RAM permits
+    for input_type in [39,49,21,22,23,24,26]: # do 19 at the end, if mem/ RAM permits
         X,res ={},{}
         T = ['trn1','trn2','val','tst']
         if input_type == 11:
           T = ['trn1','trn2','val']
         for t in T: # construct an input combination
-            if input_type==19:
+            if input_type<19:
+                X[t] = Embeddings[input_type,t]
+                inp_str = f'{input_type}_all'
+            elif input_type==19:
                 X[t] = np.hstack( (Embeddings[1,t],Embeddings[2,t],Embeddings[3,t],Embeddings[4,t] ) )
                 inp_str = f'{input_type}_all'
             elif input_type == 39:
-                X[t] = np.hstack( (we_reduced[1,t,rdim], we_reduced[2,t,rdim], we_reduced[3,t,rdim], we_reduced[4,t,rdim] ) )
+                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim] ) )
                 print( 'All avail dimensionality reduced word embedding', )
                 inp_str = f'{input_type}_all_rdims{rdim}'
             elif input_type == 49:
-                X[t] = np.hstack( (we_reduced[1,t,rdim], we_reduced[2,t,rdim], we_reduced[3,t,rdim], we_reduced[4,t,rdim], surv_pols[t][att].to_pandas() ) )
+                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim] ) )
+                X[t] = np.hstack( (X[t], surv_pols[t][att].to_pandas() ) )
                 print( 'All avail dimensionality reduced word embedding with', att )
                 inp_str = f'{input_type}_k{len(att)}_all_rdims{rdim}'
 
             elif input_type >= 21: # dim reduced versions for comparison with Cox regression to be done next code block
                 rr = input_type % 10
                 inp_str = f'{input_type}_k{len(att)}_emb{rr}_rdims{rdim}'
-                X[t] = np.hstack( (we_reduced[rr,t,rdim], surv_pols[t][att].to_pandas() ) )
+                X[t] = np.hstack( (we_reduced[rr][t,rdim], surv_pols[t][att].to_pandas() ) )
                 print( f'Dimensionality reduced word embedding {rr} with', att )
 
         output_file=f'{res_dir}/outcome{DEFN}_xgb-aft_inp{inp_str}.json'

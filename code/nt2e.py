@@ -508,7 +508,7 @@ if ('we_reduced' in globals())==False:
                 
     for e in EMB:        
         for r in RDIMS:
-            reduced_filename = inter_dir + '/reduced_emb{e}_{r}rdims.pkl'            
+            reduced_filename = inter_dir + f'/reduced_emb{e}_{r}rdims.pkl'            
             for t in T:
                 try:
                     we_reduced[e]
@@ -664,7 +664,7 @@ def run_xgb_optuna( T, emb, X, surv_inter, output_file ):
     bst.save_model( output_file )
     return res    
 
-
+n_trials = 500
 for DEFN in [1,2]:
     event_indicator, time2event, surv_inter, surv_str = get_surv( surv_pols, DEFN )
 

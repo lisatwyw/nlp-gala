@@ -674,7 +674,7 @@ for DEFN in [1,2]:
     pos_ratio = 1-np.isinf( surv_inter['trn1']['label_upper_bound'] ).sum() / surv_inter['trn1'].shape[0]
     print( 'pos-neg-ratio:', pos_ratio, n_trials, 'trials during Optuna search')
     
-    for input_type in [39,49,21,22,23,24,26]: # do 19 at the end, if mem/ RAM permits
+    for input_type in [39,49,1,2,3,4,6, 21,22,23,24,26]: # skip 19 since mem/ RAM limited
         X,res ={},{}
         T = ['trn1','trn2','val','tst']
         if input_type == 11:
@@ -687,11 +687,11 @@ for DEFN in [1,2]:
                 X[t] = np.hstack( (Embeddings[1,t],Embeddings[2,t],Embeddings[3,t],Embeddings[4,t] ) )
                 inp_str = f'{input_type}_all'
             elif input_type == 39:
-                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim] ) )
+                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim], we_reduced[6][t,rdim] ))
                 print( 'All avail dimensionality reduced word embedding', )
                 inp_str = f'{input_type}_all_rdims{rdim}'
             elif input_type == 49:
-                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim] ) )
+                X[t] = np.hstack( (we_reduced[1][t,rdim], we_reduced[2][t,rdim], we_reduced[3][t,rdim], we_reduced[4][t,rdim], we_reduced[6][t,rdim] ))
                 X[t] = np.hstack( (X[t], surv_pols[t][att].to_pandas() ) )
                 print( 'All avail dimensionality reduced word embedding with', att )
                 inp_str = f'{input_type}_k{len(att)}_all_rdims{rdim}'

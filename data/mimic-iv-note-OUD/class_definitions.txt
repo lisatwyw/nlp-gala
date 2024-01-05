@@ -1,3 +1,36 @@
+Opioid type
+Illicit opioid use (current)
+Illicit opioid use (past)
+Opioid dependency
+Opioid seeking
+Opioid misuse uncertain
+Underspecified opioid use
+OUD (current)
+OUD (past)
+OUD (negated)
+OUD treatment (current)
+OUD treatment (negated)
+Opioid reduction (successful)
+Opioid reduction (unsuccessful)
+Psychosocial stressors
+Psychiatric (current)
+Psychiatric (past)
+Psychiatric (negated)
+Psychiatric (uncertain)
+Pain
+Pain management
+Other contexts
+Other drug use (current)
+Other drug use (past)
+Other drug use (negated)
+Overdose (current)
+Overdose (past)
+Overdose (negated)
+Overdose (uncertain)
+Drug screening
+Vocational interferences
+Interpersonal and legal consequences
+Patient-level OUD assertion
 Opioid type	Any mention of an opioid (e.g., “hydromorphone,” “methadone,”)
 Illicit opioid use (current)	Recent history of illicit opioid use (e.g., “patient admits to using heroin”)
 Illicit opioid use (past)	Patient has a history of illicit opioid use (“history of IV heroin use”)

@@ -5,7 +5,7 @@
 Replace ```yourusername``` with your's
 - https://sfu.syzygy.ca/jupyter/user/yourusername/lab
 - https://ubc.syzygy.ca/jupyter/user/yourusername/lab
-- https://jupyterhub.dataspace.copernicus.eu/user/r4g.neiss2@gmail.com/lab/workspaces/auto-b
+- [https://jupyterhub.dataspace.copernicus.eu/](https://jupyterhub.dataspace.copernicus.eu/user/r4g.neiss2@gmail.com/lab/workspaces/auto-b)
 
 
 ## Option 2: Digital Research Alliance 

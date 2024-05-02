@@ -175,7 +175,16 @@ if choice == "On Text":
     st.subheader("Topic Modeling and Labeling on Text")
 
     # Create a text area widget to allow users to paste transcripts
-    text_input = st.text_area("Paste enter text to be analyzed here", height=400)
+
+    long_string = '''
+    For the past many years, Reliance General Insurance has been reinvesting the annual bottom line in growing the business and maintaining solvency over the Regulatory limits. The latest solvency position as on 31st December 2022 stands at 1.59 times indicating sufficient buffer over its Policyholder liabilities There is no challenge to the company to grow at the past growth rates due to strong internal accruals and existing capital.
+
+    Additionally, the company ranks best amongst large players in the industry in terms of its faster claims settlement. As per the IRDAI’s Annual Report, for the year 2021-22, the company has settled over 23 lakh claims of which 98.65% claims were settled in less than 3 months’ time.
+
+    In a statement, Reliance General Insurance said, "Considering the fact, that the insurance penetration level in our country is very low as compared to other parts of the world and the big-ticket reforms recently initiated on the Regulatory side facilitating ease of doing business in the insurance sector, and ensuring the regulatory architecture is aligned with the market dynamics to improve penetration, there is an augmented opportunity for much faster growth over the past. Few reforms are already in place, and few are in pipeline."
+
+    '''
+    text_input = st.text_area("Paste enter text to be analyzed here (example provided):", value=long_string, height=400)
 
     if text_input is not None:
 

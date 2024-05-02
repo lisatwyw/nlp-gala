@@ -1,5 +1,6 @@
 pytube
-gensim
+gensimc 
+scipy==1.10.1
 streamlit
 openai-whisper
 

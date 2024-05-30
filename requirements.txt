@@ -1,6 +1,8 @@
 pytube
 scipy==1.10.1
-gensim
 streamlit
 openai-whisper
+sumy
+gensim
+bert-extractive-summarizer
 

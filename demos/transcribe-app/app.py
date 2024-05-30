@@ -17,19 +17,27 @@ from pytube import YouTube
 from pathlib import Path
 import shutil
 import pandas as pd
-
+from gensim.summarization import summarize
 import requests
 
 # Input text to be summarized
 input_text = """
 Your input text goes here. It can be a long paragraph or multiple paragraphs. 
 """
+try:
+  # Make a POST request to the TextTeaser API
+  response = requests.post("http://www.textteaser.com/api", data={"text": input_text})
 
-# Make a POST request to the TextTeaser API
-response = requests.post("http://www.textteaser.com/api", data={"text": input_text})
+  # Extract and output the summary from the API response
+  summary = response.text
+except:
+  pass
 
-# Extract and output the summary from the API response
-summary = response.text
+
+
+# Generate the summary using TextRank algorithm
+summary = summarize(input_text, ratio=0.3)  # You can adjust the ratio parameter based on the summary length you desire
+
 st.write("Original Text:")
 st.write(input_text)
 st.write("\nSummary:")

@@ -31,6 +31,6 @@ show_pages(
     ]
 )
 
-f = current_dir + '/README.md'
+f = current_dir + '/readme.md'
 mkd = Path( f ).read_text()
 st.markdown( mkd )

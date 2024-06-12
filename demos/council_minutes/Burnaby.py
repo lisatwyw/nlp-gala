@@ -33,6 +33,11 @@ fig.update_yaxes(showspikes=True, spikemode="across")
 
 st.plotly_chart( fig)
 
+mkd = '''
+Hover over the counts to see each reference of the word ```alcohol``` 
+'''
+st.markdown( mkd )
+
 
 st.header( 'Dataframe created by the backend' )
 st.dataframe(dat)

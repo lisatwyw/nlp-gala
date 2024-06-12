@@ -1,6 +1,6 @@
 
 
-   ## Cities
+   ## List of cities 
     - Abbotsford: https://abbotsford.civicweb.net/filepro/documents/57194/?preview=57309
     - Armstrong: https://armstrong.civicweb.net/filepro/documents/207/
     - Burnaby: https://www.burnaby.ca/our-city/meetings-and-public-hearings/council-meetings

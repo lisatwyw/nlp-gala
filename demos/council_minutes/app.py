@@ -30,3 +30,7 @@ show_pages(
         Page(Path( current_dir, "Burnaby.py"), "Burnaby"),       
     ]
 )
+
+f = current_dir + '/README.md'
+mkd = Path( f ).read_text()
+st.markdown( mkd )

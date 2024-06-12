@@ -18,7 +18,7 @@ print( gparent_dir )
 
 show_pages(
     [
-        Page(Path( "main.py"), "Civil discourse", "🏠", "Civil discourse"),
-        Page(Path( "Burnaby.py"), "Burnaby"),       
+        Page(Path( current_dir, "main.py"), "Civil discourse", "🏠", "Civil discourse"),
+        Page(Path( current_dir, "Burnaby.py"), "Burnaby"),       
     ]
 )

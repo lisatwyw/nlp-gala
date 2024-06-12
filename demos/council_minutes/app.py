@@ -7,7 +7,7 @@ st.title( 'Civil discourse' )
 
 show_pages(
     [
-        Page(Path( utils.parent_dir, "main.py"), "Civil discourse", "🏠", "Civil discourse"),
-        Page(Path( utils.parent_dir, "Burnaby.py"), "Burnaby"),       
+        Page(Path( "main.py"), "Civil discourse", "🏠", "Civil discourse"),
+        Page(Path( "Burnaby.py"), "Burnaby"),       
     ]
 )

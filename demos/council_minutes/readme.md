@@ -1,19 +1,28 @@
 
 # City council minutes
 
-## List of cities 
+**This is a proof-of-concept**
 
-### Explored
- - Abbotsford: https://abbotsford.civicweb.net/filepro/documents/57194/?preview=57309
- - Armstrong: https://armstrong.civicweb.net/filepro/documents/207/
- - Burnaby: https://www.burnaby.ca/our-city/meetings-and-public-hearings/council-meetings
- - Campbell River: https://campbellriver.civicweb.net/Portal/MeetingInformation.aspx?Org=Cal&Id=2931
+## Overview
 
-### Not explored
- <details>    
-  
+This app extracts alcohol-related content found in the council minutes from the City of Burnaby during the past year.
+
+
+## Misc. details 
+
+<details>    
+ 
+   <summary>List of cities </summary>
+
+    ### Explored
+    - Abbotsford: https://abbotsford.civicweb.net/filepro/documents/57194/?preview=57309
+    - Armstrong: https://armstrong.civicweb.net/filepro/documents/207/
+    - Burnaby: https://www.burnaby.ca/our-city/meetings-and-public-hearings/council-meetings
+    - Campbell River: https://campbellriver.civicweb.net/Portal/MeetingInformation.aspx?Org=Cal&Id=2931
+    - Castlegar
+
+    ### Not explored
     ```    
-    Castlegar
     Chilliwack
     Colwood
     Coquitlam
@@ -75,6 +84,7 @@
     Smithers
     View Royal
     ``` 
+    
     ## District Municipalities
     ```
     North Vancouver (District)
@@ -103,22 +113,20 @@
     Zeballos
     ```
 
-   </details>
-
-
-## Government and Administrative Terms
-
-```
-Council meeting
-Agenda
-Minutes
-Resolution
-Motion
-Debate
-Public input
-Stakeholder
-Committee
-Task force
-Proposal
-Initiative
-```
+   
+   ## Government and Administrative Terms
+   ```
+   Council meeting
+   Agenda
+   Minutes
+   Resolution
+   Motion
+   Debate
+   Public input
+   Stakeholder
+   Committee
+   Task force
+   Proposal
+   Initiative
+   ```
+</details>

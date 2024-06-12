@@ -10,7 +10,9 @@ parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
 data_dir = gparent_dir +  '/data/' 
 
-filepath = gparent_dir + '/output/bby.csv'
+st.write(gparent_dir)
+
+filepath = gparent_dir + '/demos/council_minutes/output/bby.csv'
 dat = pd.read_csv( Path(filepath ))
 st.dataframe(dat)
 

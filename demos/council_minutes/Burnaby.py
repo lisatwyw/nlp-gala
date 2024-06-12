@@ -19,7 +19,7 @@ dat = pd.read_csv( Path(filepath ))
 
 
 st.header( 'Prelim. results' )
-fig = px.bar(bby, x = 'date', hover_data ='alc_contexts', y='alc_counts', title=f'Alcohol - Number of mentions in {key.capitalize()}' )
+fig = px.bar( dat, x = 'date', hover_data ='alc_contexts', y='alc_counts', title=f'Alcohol - Number of mentions in {key.capitalize()}' )
 fig.update_layout(hovermode="x unified")
 
 fig.update_xaxes(showspikes=True, spikemode="across")

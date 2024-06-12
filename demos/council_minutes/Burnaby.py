@@ -11,7 +11,7 @@ gparent_dir= str( Path(__file__).parents[1] )
 data_dir = gparent_dir +  '/data/' 
 
 filepath = gparent_dir + '/output/bby.csv'
-dat = pd.read_csv( filepath )
+dat = pd.read_csv( Path(filepath ))
 st.dataframe(dat)
 
 

@@ -26,7 +26,7 @@ st.write(gparent_dir)
 
 show_pages(
     [
-        Page(Path( current_dir, "app.py"), "Civil discourse", "🏠", "Civil discourse"),
+        Page(Path( current_dir, "main.py"), "Civil discourse", "🏠", "Civil discourse"),
         Page(Path( current_dir, "Burnaby.py"), "Burnaby"),       
     ]
 )

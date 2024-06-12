@@ -12,12 +12,15 @@ parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
 data_dir = gparent_dir +  '/data/' 
 
+
+utils.st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
+# ============================== read data ==============================
 filepath = gparent_dir + '/council_minutes/output/bby.csv'
 dat = pd.read_csv( Path(filepath ))
 
-
+# ============================== widgets ==============================
 st.header( 'Prelim. results' )
 fig = px.bar( dat, x = 'date', hover_data ='alc_contexts', y='alc_counts', title=f'Alcohol - Number of mentions in {key.capitalize()}' )
 fig.update_layout(hovermode="x unified")

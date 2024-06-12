@@ -4,6 +4,8 @@ from st_pages import Page, show_pages, add_page_title  # allow multipages
 from pathlib import Path
 from glob import glob 
 
+import plotly.express as px
+
 import numpy as np
 
 parent_dir = str( Path(__file__).parents[0] )
@@ -14,6 +16,17 @@ st.write(gparent_dir)
 
 filepath = gparent_dir + '/council_minutes/output/bby.csv'
 dat = pd.read_csv( Path(filepath ))
+
+
+st.header( 'Prelim. results' )
+fig = px.bar(bby, x = 'date', hover_data ='alc_contexts', y='alc_counts', title=f'Alcohol - Number of mentions in {key.capitalize()}' )
+fig.update_layout(hovermode="x unified")
+
+fig.update_xaxes(showspikes=True, spikemode="across")
+fig.update_yaxes(showspikes=True, spikemode="across")
+
+st.plotly_chart( fig)
+
+
+st.header( 'Dataframe created by the backend' )
 st.dataframe(dat)
-
-

@@ -13,7 +13,7 @@ gparent_dir= str( Path(__file__).parents[1] )
 data_dir = gparent_dir +  '/data/' 
 
 
-utils.st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
 # ============================== read data ==============================

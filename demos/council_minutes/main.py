@@ -18,12 +18,6 @@ sys.path.append(parent_dir)
 
 # ================================ Widgets =============================== 
 st.title( 'Civil discourse' )
-
-
-
-st.write(gparent_dir)
-
-
 show_pages(
     [
         Page(Path( current_dir, "main.py"), "Civil discourse", "🏠", "Civil discourse"),

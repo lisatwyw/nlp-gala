@@ -51,3 +51,68 @@ February 14, 2022
 January 31, 2022
 January 24, 2022 
 ```
+n = 50
+
+## Campbell River
+```
+Jun 4-24 Regular Council
+Jun 4-24 Committee of the Whole
+May 24-24 Special Council
+May 23-24 Regular Council
+May 21-24 Committee of the Whole
+May 9-24 Regular Council
+May 7-24 Special Council
+May 7-24 Committee of the Whole
+May 1-24 Public Hearing
+Apr 25-24 Regular Council
+Apr 23-24 Committee of the Whole
+Apr 23-24 Special Council
+Apr 11-24 Regular Council
+Apr 9-24 Committee of the Whole
+Mar 28-24 Regular Council
+Mar 26-24 Committee of the Whole
+Mar 14-24 Regular Council
+Mar 12-24 Committee of the Whole
+Feb 29-24 Regular Council
+Feb 27-24 Committee of the Whole
+Feb 15-24 Regular Council
+Feb 15-24 Special Council
+Feb 13-24 Committee of the Whole
+Feb 13-24 Special Council
+Jan 25-24 Regular Council
+Jan 23-24 Committee of the Whole
+Jan 11-24 Regular Council
+Jan 9-24 Committee of the Whole
+Dec 14-23 Regular Council
+Dec 12-23 Committee of the Whole
+Dec 12-23 Special Council
+Dec 8-23 Special Council
+Dec 6-23 Community Partnership Committee
+Dec 4-23 Community Partnership Committee
+Nov 28-23 Financial Planning
+Nov 23-23 Regular Council
+Nov 21-23 Committee of the Whole
+Nov 9-23 Regular Council
+Nov 7-23 Committee of the Whole
+Nov 03-23 Regular Council
+Oct 26-23 Regular Council
+Oct 24-23 Committee of the Whole
+Oct 12-23 Regular Council
+Oct 10-23 Committee of the Whole
+Sep 28-23 Regular Council
+Sep 26-23 Committee of the Whole
+Sep 13-23 Special Committee of the Whole
+Sep 7-23 Regular Council
+Sep 6-23 Public Hearing
+Sep 5-23 Committee of the Whole
+Aug 22-23 Community Partnership Committee
+Aug 21-23 Community Partnership Committee
+Aug 17-23 Regular Council
+Aug 17-23 Community Partnership Committee
+Aug 15-23 Committee of the Whole
+Jul 28-23 Special Council - NO QUORUM
+Jul 27-23 Special Council
+Jul 20-23 Regular Council
+Jul 18-23 Committee of the Whole
+```
+n = 115 - 57 = 54

@@ -9,6 +9,8 @@ parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
 st.write(gparent_dir)
 
+print( gparent_dir )
+
 show_pages(
     [
         Page(Path( "main.py"), "Civil discourse", "🏠", "Civil discourse"),

@@ -12,7 +12,7 @@ data_dir = gparent_dir +  '/data/'
 
 st.write(gparent_dir)
 
-filepath = gparent_dir + '/demos/council_minutes/output/bby.csv'
+filepath = gparent_dir + '/council_minutes/output/bby.csv'
 dat = pd.read_csv( Path(filepath ))
 st.dataframe(dat)
 

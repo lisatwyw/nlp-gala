@@ -72,19 +72,6 @@ Rehabilitation
 Counseling
 Public awareness
 Prevention programs
-# Government and Administrative Terms
-Council meeting
-Agenda
-Minutes
-Resolution
-Motion
-Debate
-Public input
-Stakeholder
-Committee
-Task force
-Proposal
-Initiative
 # Specific Alcohol Terms
 Craft brewery
 Microbrewery

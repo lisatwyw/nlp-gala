@@ -1,16 +1,16 @@
 
+# City council minutes
 
+## List of cities 
 
-   ## List of cities 
+### Explored
+ - Abbotsford: https://abbotsford.civicweb.net/filepro/documents/57194/?preview=57309
+ - Armstrong: https://armstrong.civicweb.net/filepro/documents/207/
+ - Burnaby: https://www.burnaby.ca/our-city/meetings-and-public-hearings/council-meetings
+ - Campbell River: https://campbellriver.civicweb.net/Portal/MeetingInformation.aspx?Org=Cal&Id=2931
 
-   
-    - Abbotsford: https://abbotsford.civicweb.net/filepro/documents/57194/?preview=57309
-    - Armstrong: https://armstrong.civicweb.net/filepro/documents/207/
-    - Burnaby: https://www.burnaby.ca/our-city/meetings-and-public-hearings/council-meetings
-    - Campbell River: https://campbellriver.civicweb.net/Portal/MeetingInformation.aspx?Org=Cal&Id=2931
-
-    <details>
-    
+### Not explored
+ <details>    
     ```    
     Castlegar
     Chilliwack
@@ -102,7 +102,7 @@
     Zeballos
     ```
 
-</details>
+   </details>
 
 
 ## Government and Administrative Terms

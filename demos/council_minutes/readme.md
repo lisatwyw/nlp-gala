@@ -113,8 +113,11 @@ This app extracts alcohol-related content found in the council minutes from the 
     Zeballos
     ```
 
+   </details>    
+   <details>    
+ 
+   <summary>Government and Administrative Terms</summary>
    
-   ## Government and Administrative Terms
    ```
    Council meeting
    Agenda

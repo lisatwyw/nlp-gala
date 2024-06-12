@@ -16,7 +16,7 @@ data_dir = gparent_dir +  '/data/'
 st.set_page_config(layout="wide")
 st.write(__file__[:-3])
 
-city_name = __file__[:-3].capitalize()
+city_name = os.path.basename(__file__)[:-3].capitalize()
 
 # ============================== read data ==============================
 filepath = gparent_dir + '/council_minutes/output/bby.csv'

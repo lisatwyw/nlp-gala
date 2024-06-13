@@ -1,4 +1,7 @@
 import streamlit as st
+import os
+
+st.write('Below are links to the minutes accessible on colwood.civicweb.net')
 links = ['https://colwood.civicweb.net/filepro/document/226140/Council%20-%2027%20May%202024%20Minutes.pdf',
  'https://colwood.civicweb.net/filepro/document/225759/Council%20-%2013%20May%202024%20Minutes.pdf',
  'https://colwood.civicweb.net/filepro/document/225757/Special%20Council%20-%2008%20May%202024%20Minutes.pdf',
@@ -101,3 +104,9 @@ links = ['https://colwood.civicweb.net/filepro/document/226140/Council%20-%2027%
  'https://colwood.civicweb.net/filepro/document/202552/Council%20-%2026%20Sep%202022%20Minutes.pdf',
  'https://colwood.civicweb.net/filepro/document/209740/Public%20Hearing%20-%2022%20Sep%202022%20Minutes.pdf',
  'https://colwood.civicweb.net/filepro/document/204520/Emergency%20Planning%20Committee%20-%2020%20Sep%202022%20Minutes.pdf']
+
+
+for l in links:  
+ ll = os.path.basename( l )
+ #ll.replace('')
+ st.markdown("[ll](%s)" % l)

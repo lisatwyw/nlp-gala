@@ -107,6 +107,6 @@ links = ['https://colwood.civicweb.net/filepro/document/226140/Council%20-%2027%
 
 
 for l in links:  
- ll = os.path.basename( l )
- #ll.replace('')
- st.markdown("[ll](%s)" % l)
+ txt = os.path.basename( l )
+ #txt.replace('')
+ st.markdown( f'[{txt}]({l})' )

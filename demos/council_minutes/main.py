@@ -22,6 +22,8 @@ show_pages(
     [
         Page(Path( current_dir, "main.py"), "Civil discourse", "🏠", "Civil discourse"),
         Page(Path( current_dir, "Burnaby.py"), "Burnaby"),       
+        Page(Path( current_dir, "Colwood.py"), "Colwood"),       
+        
     ]
 )
 

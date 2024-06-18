@@ -1,7 +1,7 @@
 
 # Catalog
 
-## Emer Complaing Gout
+## EMER Complain Gout
 
 - Replace ```<username>``` with your username
 ```
@@ -10,7 +10,7 @@ wget -r -N -c -np --user <username> --ask-password https://physionet.org/files/e
 
 ```
 import pandas as pd
-df= pd.read_csv('opensource/physionet.org/files/emer-complaint-gout/1.0/GOUT-CC-2019-CORPUS-REDACTED.csv' )
+df= pd.read_csv('physionet.org/files/emer-complaint-gout/1.0/GOUT-CC-2019-CORPUS-REDACTED.csv' )
 ```
 
 ```

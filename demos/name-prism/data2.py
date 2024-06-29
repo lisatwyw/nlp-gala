@@ -74,7 +74,7 @@ mkd = '''
 st.markdown( mkd )
 st.write( df.shape )
 
-st.dataframe( df )
+st.dataframe( df, num_rows="dynamic" )
 
 
 tabs= st.tabs( ['Filter'] )

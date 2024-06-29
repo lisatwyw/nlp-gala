@@ -63,7 +63,7 @@ filepath = parent_dir + '/data/Names_2010Census_Top1000.csv'
 st.text( filepath )
 df = pd.read_csv( Path(filepath), on_bad_lines='skip' )
 # df = pd.read_excel( Path(filepath), index_col=0 )
-st.dataframe( df.head(3) )
+
 
 mkd = '''
 ## Ethnicities in this dataset
@@ -74,21 +74,10 @@ mkd = '''
 st.markdown( mkd )
 st.write( df.shape )
 
+st.dataframe( df )
 
-tabs= st.tabs( ['Filter', 'Summary'] )
 
-with tabs[1]:
-    try:
-        fig = px.histogram( df, x = 'SURNAME',  title=f'{1}' )
-        fig.update_layout(hovermode="x unified")
-        
-        #fig.update_xaxes(showspikes=True, spikemode="across")
-        #fig.update_yaxes(showspikes=True, spikemode="across")
-        
-        st.plotly_chart( fig )
-    except:
-        pass
-
+tabs= st.tabs( ['Filter'] )
 with tabs[0]:
     try:
         S = df.columns 

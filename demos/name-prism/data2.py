@@ -76,8 +76,9 @@ st.write( df.shape )
 
 st.dataframe( df )
 
+st.text(df.columns  ) 
 
-tabs= st.tabs( ['Filter'] )
+tabs= st.tabs( ['Filter', 'Summary'] )
 
 
 with tabs[1]:

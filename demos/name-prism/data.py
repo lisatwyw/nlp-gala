@@ -19,9 +19,9 @@ st.write(gparent_dir)
 # ============================== read data ==============================
 filepath = parent_dir + '/data/Popular_Baby_Names.csv'
 
-dat = pd.read_csv( Path(filepath ))
+df = pd.read_csv( Path(filepath ))
 
-st.dataframe( dat ) 
+st.dataframe( df ) 
 
 st.markdown( '## Ethnicities in this dataset' )
-st.write( data.Ethnicity.unique()  )
+st.write( df.Ethnicity.unique()  )

@@ -17,7 +17,7 @@ sys.path.append(current_dir)
 sys.path.append(parent_dir)
 
 # ================================ Widgets =============================== 
-st.title( 'Civil discourse' )
+st.title( 'Name Prism' )
 show_pages(
     [
         Page(Path( current_dir, "app.py"), "Who is Who", "🏠", "Who is Who"),

@@ -21,7 +21,14 @@ filepath = parent_dir + '/data/Popular_Baby_Names.csv'
 
 df = pd.read_csv( Path(filepath ))
 
-st.dataframe( df ) 
-
 st.markdown( '## Ethnicities in this dataset' )
 st.write( df.Ethnicity.unique()  )
+
+fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
+fig.update_layout(hovermode="x unified")
+
+#fig.update_xaxes(showspikes=True, spikemode="across")
+#fig.update_yaxes(showspikes=True, spikemode="across")
+
+st.plotly_chart( fig )
+st.dataframe( df ) 

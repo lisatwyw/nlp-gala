@@ -57,7 +57,7 @@ st.text( df.columns )
 tabs= st.tabs( ['Filter', 'Summary'] )
 
 with tabs[1]:
-    fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
+    fig = px.histogram( df, x = 'w.asian',  title=f'{1}' )
     fig.update_layout(hovermode="x unified")
     
     #fig.update_xaxes(showspikes=True, spikemode="across")

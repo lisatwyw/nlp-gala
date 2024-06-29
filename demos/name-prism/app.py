@@ -18,6 +18,9 @@ print( gparent_dir )
 sys.path.append(current_dir)
 sys.path.append(parent_dir)
 
+
+st.set_page_config(layout="wide")
+
 # ================================ Widgets =============================== 
 show_pages(
     [

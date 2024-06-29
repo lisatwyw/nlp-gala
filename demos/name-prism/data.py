@@ -23,12 +23,13 @@ df = pd.read_csv( Path(filepath ))
 
 mkd = '''
 ## Ethnicities in this dataset
-Data source: https://catalog.data.gov/dataset/popular-baby-names
+- Data source: https://catalog.data.gov/dataset/popular-baby-names
+- Size of dataset:
 '''
 
 st.markdown( mkd )
-#st.write( df.Ba.unique()  )
-#st.write()
+st.write( df.shape )
+
 
 fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
 fig.update_layout(hovermode="x unified")

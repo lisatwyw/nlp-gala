@@ -64,7 +64,7 @@ def get():
     # df = pd.read_excel( Path(filepath), index_col=0 )
     return df
     
-df = get()
+df2 = get()
 
 
 
@@ -74,8 +74,8 @@ mkd = '''
 - Size of dataset:
 '''
 st.markdown( mkd )
-st.write( df.shape )
-st.text(df.columns  ) 
+st.write( df2.shape )
+st.text( df2.columns  ) 
 
 
 
@@ -86,7 +86,7 @@ with tabs[0]:
     for c in df.columns:
         try:
             if c != 'id':
-                fig = px.histogram( df, x = c, title=c.capitalize() )
+                fig = px.histogram( df2, x = c, title=c.capitalize() )
                 fig.update_layout(hovermode="x unified")    
                 st.plotly_chart( fig )
         except:
@@ -95,26 +95,22 @@ with tabs[0]:
 
 with tabs[1]:
     st.header('All')
-    st.dataframe( df[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
+    st.dataframe( df2[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
     
     st.header('Indigenous only')    
-    df = df[ df['res.race'] == 'Indigenous' ] 
-    st.dataframe( df )    
+    df2 = df2[ df2['res.race'] == 'Indigenous' ] 
+    st.dataframe( df2 )    
     try:
         S = ['res.male', 'res.age', 'res.edu', 'res.income' ]
-        dynamic_filters = DynamicFilters(df,
+        dynamic_filters = DynamicFilters(df2,
                                          filters=S, 
                                          )
-        with st.sidebar:
-            st.write("Apply filters (in any order)")
         dynamic_filters.display_filters()
         dynamic_filters.display_df()   
         new_df = dynamic_filters.filter_df()
-
-        if 1:
-            st.write( 'Summary (of filtered subset):')
-            st.write( new_df['res.age'].describe()  )
-            st.write( new_df['res.edu'].describe() )
+        st.write( 'Summary (of filtered subset):')
+        st.write( new_df['res.age'].describe()  )
+        st.write( new_df['res.edu'].describe() )
     except:
         pass
  

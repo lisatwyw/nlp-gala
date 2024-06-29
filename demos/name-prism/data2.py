@@ -61,7 +61,7 @@ except:
 
 filepath = parent_dir + '/data/Names_2010Census_Top1000.csv'
 st.text( filepath )
-df = pd.read_csv( Path(filepath), error_bad_lines=False )
+df = pd.read_csv( Path(filepath), on_bad_lines='skip' )
 # df = pd.read_excel( Path(filepath), index_col=0 )
 st.dataframe( df.head(3) )
 

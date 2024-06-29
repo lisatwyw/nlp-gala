@@ -92,6 +92,9 @@ with tabs[0]:
      
 
 with tabs[1]:
+
+    st.dataframe( df[ ['name','first','last','Res.race', 'Res.male', 'Res.age', 'Res.edu', 'Res.income'] ] )
+    
     try:
         S = ['name', 'first', 'last' ]
         dynamic_filters = DynamicFilters(df,

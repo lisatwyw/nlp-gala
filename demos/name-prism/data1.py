@@ -74,7 +74,7 @@ with tabs[0]:
                                          )
         with st.sidebar:
             st.write("Apply filters in any order")
-        dynamic_filters1.display_filters(location='columns')  # or sidebar, or None
+        dynamic_filters1.display_filters(location='columns', num_columns=2)  # or sidebar, or None
         dynamic_filters1.display_df()   
         new_df1 = dynamic_filters1.filter_df()
         st.write( 'Summary (of filtered subset):')

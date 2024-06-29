@@ -96,11 +96,11 @@ with tabs[0]:
 with tabs[1]:
     st.header('All')
     st.dataframe( df[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
-    st.header('')
-    st.dataframe( df[ df['res.race'] == 'Indigenous' ] )
+    st.header('Indigenous only')
     
+    st.dataframe( df[ df['res.race'] == 'Indigenous' ] )    
     try:
-        S = ['name', 'first', 'last' ]
+        S = ['res.male', 'res.age', 'res.edu', 'res.income' ]
         dynamic_filters = DynamicFilters(df,
                                          filters=S, 
                                          )
@@ -110,10 +110,10 @@ with tabs[1]:
         dynamic_filters.display_df()   
         new_df = dynamic_filters.filter_df()
 
-        if 0:
+        if 1:
             st.write( 'Summary (of filtered subset):')
-            st.write( new_df.Ethnicity.describe()  )
-            st.write( new_df['Child\'s First Name'].describe() )
+            st.write( new_df['res.age'].describe()  )
+            st.write( new_df['res.edu'].describe() )
     except:
         pass
  

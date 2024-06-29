@@ -93,7 +93,7 @@ with tabs[0]:
 
 with tabs[1]:
 
-    st.dataframe( df[ ['name','first','last','Res.race', 'Res.male', 'Res.age', 'Res.edu', 'Res.income'] ] )
+    st.dataframe( df[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
     
     try:
         S = ['name', 'first', 'last' ]

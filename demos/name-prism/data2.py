@@ -70,16 +70,14 @@ mkd = '''
 - Data source: Crabtree et al.
 - Size of dataset:
 '''
-
 st.markdown( mkd )
 st.write( df.shape )
-
-st.dataframe( df )
-
 st.text(df.columns  ) 
 
-tabs= st.tabs( [ 'Summary',''] )
 
+
+
+tabs= st.tabs( [ 'Summary','Data'] )
 
 with tabs[0]:
     for c in df.columns:
@@ -93,7 +91,6 @@ with tabs[0]:
      
 
 with tabs[1]:
-
     st.dataframe( df[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
     
     try:
@@ -106,10 +103,11 @@ with tabs[1]:
         dynamic_filters.display_filters(location='sidebar')
         dynamic_filters.display_df()   
         new_df = dynamic_filters.filter_df()
-    
-        st.write( 'Summary (of filtered subset):')
-        st.write( new_df.Ethnicity.describe()  )
-        st.write( new_df['Child\'s First Name'].describe() )
+
+        if 0:
+            st.write( 'Summary (of filtered subset):')
+            st.write( new_df.Ethnicity.describe()  )
+            st.write( new_df['Child\'s First Name'].describe() )
     except:
         pass
  

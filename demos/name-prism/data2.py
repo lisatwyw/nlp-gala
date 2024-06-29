@@ -83,6 +83,7 @@ with tabs[1]:
 with tabs[0]:
     try:
         S = df.columns 
+        st.text(S) 
         dynamic_filters = DynamicFilters(df,
                                          filters=S, 
                                          )

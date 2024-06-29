@@ -22,3 +22,6 @@ filepath = parent_dir + '/data/Popular_Baby_Names.csv'
 dat = pd.read_csv( Path(filepath ))
 
 st.dataframe( dat ) 
+
+st.markdown( '## Ethnicities in this dataset' )
+st.write( data.Ethnicity.unique()  )

@@ -82,14 +82,14 @@ tabs= st.tabs( [ 'Summary',''] )
 
 
 with tabs[0]:
-    fig = px.histogram( df, x = 'specific.race', title=f'Race' )
-    fig.update_layout(hovermode="x unified")    
-    st.plotly_chart( fig )
-
-    fig = px.histogram( df, x = 'education', title=f'Education' )
-    fig.update_layout(hovermode="x unified")    
-    st.plotly_chart( fig )
-
+    for c in df.columns:
+        try:
+            fig = px.histogram( df, x = c, title=c.capitalize() )
+            fig.update_layout(hovermode="x unified")    
+            st.plotly_chart( fig )
+        except:
+            pass
+     
 
 with tabs[1]:
     try:

@@ -82,15 +82,18 @@ tabs= st.tabs( ['Filter', 'Summary'] )
 
 
 with tabs[1]:
-    fig = px.histogram( df, x = 'speciic.race', y='education',  title=f'Race vs education' )
+    fig = px.histogram( df, x = 'speciic.race', title=f'Race' )
+    fig.update_layout(hovermode="x unified")    
+    st.plotly_chart( fig )
+
+    fig = px.histogram( df, x = 'education', title=f'Education' )
     fig.update_layout(hovermode="x unified")    
     st.plotly_chart( fig )
 
 
 with tabs[0]:
     try:
-        S = df.columns 
-        st.text(S) 
+        S = df.columns     
         dynamic_filters = DynamicFilters(df,
                                          filters=S, 
                                          )

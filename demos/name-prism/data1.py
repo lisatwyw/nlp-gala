@@ -60,9 +60,6 @@ with tabs[1]:
     fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
     fig.update_layout(hovermode="x unified")
     
-    #fig.update_xaxes(showspikes=True, spikemode="across")
-    #fig.update_yaxes(showspikes=True, spikemode="across")
-    
     st.plotly_chart( fig )
 
 
@@ -72,15 +69,13 @@ with tabs[0]:
         dynamic_filters1 = DynamicFilters(df,
                                          filters=S, 
                                          )
-        with st.sidebar:
-            st.write("Apply filters in any order")
-        dynamic_filters1.display_filters(location='columns', num_columns=2)  # or sidebar, or None
+        dynamic_filters1.display_filters(location='sidebar',)  # or columns, num_columns=2 sidebar, or None
         dynamic_filters1.display_df()   
+        
         new_df1 = dynamic_filters1.filter_df()
         st.write( 'Summary (of filtered subset):')
         st.write( new_df1.Ethnicity.describe()  )
         st.write( new_df1['Child\'s First Name'].describe() )
-
     except Exception as e:
         st.text( e )
     

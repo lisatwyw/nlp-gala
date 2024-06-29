@@ -83,7 +83,7 @@ st.text( df2.columns  )
 tabs= st.tabs( [ 'Summary','Data'] )
 
 with tabs[0]:
-    for c in df.columns:
+    for c in df2.columns:
         try:
             if c != 'id':
                 fig = px.histogram( df2, x = c, title=c.capitalize() )

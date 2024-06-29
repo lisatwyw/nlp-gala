@@ -82,7 +82,7 @@ tabs= st.tabs( ['Filter', 'Summary'] )
 
 
 with tabs[1]:
-    fig = px.histogram( df, x = 'speciic.race', title=f'Race' )
+    fig = px.histogram( df, x = 'specific.race', title=f'Race' )
     fig.update_layout(hovermode="x unified")    
     st.plotly_chart( fig )
 

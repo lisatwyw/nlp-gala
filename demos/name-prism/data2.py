@@ -92,7 +92,7 @@ with tabs[0]:
 
 
 with tabs[1]:
-    if 1:
+    try:
         S = ['name', 'first', 'last' ]
         dynamic_filters = DynamicFilters(df,
                                          filters=S, 
@@ -106,4 +106,6 @@ with tabs[1]:
         st.write( 'Summary (of filtered subset):')
         st.write( new_df.Ethnicity.describe()  )
         st.write( new_df['Child\'s First Name'].describe() )
+    except:
+        pass
  

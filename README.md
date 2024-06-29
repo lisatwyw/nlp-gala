@@ -3,9 +3,9 @@
 ## Examples
 
 - https://pcc-discourse.streamlit.app/ [archived elsewhere]
-- https://city-minutes.streamlit.app/ [archived in this repo]
-- https://transcribe-lda.streamlit.app/ [archived in this repo]
 - https://nlp-proto-1.streamlit.app/ [archived elsewhere]
+- https://city-minutes.streamlit.app/ [archived in this repo]
+- https://name-prism.streamlit.app/ [archived in this repo]
 
 
 Please consider citing this repo: 

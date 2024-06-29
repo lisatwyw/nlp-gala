@@ -2,7 +2,9 @@
 
 # Name prism 
 
-[Streamlit app](https://name-prism.streamlit.app/) is under construction
+Under construction:
+- [Streamlit app](https://name-prism.streamlit.app/)
+- [HuggingFace](https://huggingface.co/spaces/lisatwyw/name-prism)
 
 ## Purpose
 

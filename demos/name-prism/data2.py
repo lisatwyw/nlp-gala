@@ -54,7 +54,7 @@ if 0:
 filepath = parent_dir + '/data/Names_2010Census_Top1000.xlsx'
 st.text( filepath )
 df = pd.read_excel( Path(filepath ))
-
+st.dataframe( df.head(3))
 
 mkd = '''
 ## Ethnicities in this dataset

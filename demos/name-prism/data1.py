@@ -69,7 +69,7 @@ with tabs[0]:
         dynamic_filters1 = DynamicFilters(df,
                                          filters=S, 
                                          )
-        dynamic_filters1.display_filters(location='sidebar',)  # or columns, num_columns=2 sidebar, or None
+        dynamic_filters1.display_filters(location='sidebar')  # or columns, num_columns=2 sidebar, or None
         dynamic_filters1.display_df()   
         
         new_df1 = dynamic_filters1.filter_df()

@@ -39,15 +39,6 @@ fig.update_layout(hovermode="x unified")
 
 st.plotly_chart( fig )
 
-st.dataframe( df ) 
-
-
-st.write( df.Ethnicity.describe()  )
-try:
-  st.write( df['Child\'s First Name'].describe() )
-except:
-  pass
-
 
 
 import sys, os
@@ -76,8 +67,16 @@ try:
     with st.sidebar:
         st.write("Apply filters in any order")
     dynamic_filters.display_filters(location='sidebar')
-    dynamic_filters.display_df()    
+    dynamic_filters.display_df()   
+    new_df = dynamic_filters.filter_df()
 except Exception as e:
     st.text( e )
 
- 
+
+st.write( 'Quick summary:')
+st.write( new_df.Ethnicity.describe()  )
+try:
+  st.write( new_df['Child\'s First Name'].describe() )
+except:
+  pass
+

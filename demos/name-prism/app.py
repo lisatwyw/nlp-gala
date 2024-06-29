@@ -21,7 +21,7 @@ st.title( 'Name Prism' )
 show_pages(
     [
         Page(Path( current_dir, "app.py"), "Who is Who", "🏠", "Who is Who"),
-        
+        Page(Path( current_dir, "data.py"), "Sample data" ),
         
     ]
 )

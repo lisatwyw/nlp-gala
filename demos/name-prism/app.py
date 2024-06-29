@@ -21,8 +21,8 @@ sys.path.append(parent_dir)
 # ================================ Widgets =============================== 
 show_pages(
     [
-        Page(Path( current_dir, "app.py"), "Who is Who", "🏠", "Who is Who"),
-        Page(Path( current_dir, "data.py"), "Sample data" ),
+        Page(Path( current_dir, "app.py"), "Home", "🏠", "Home"),
+        Page(Path( current_dir, "data.py"), "Data explorer" ),
         
     ]
 )

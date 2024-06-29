@@ -80,7 +80,7 @@ with tabs[0]:
     except Exception as e:
         st.text( e )
     
-    st.write( 'Quick summary:')
+    st.write( 'Summary (of filtered subset):')
     st.write( new_df.Ethnicity.describe()  )
     try:
       st.write( new_df['Child\'s First Name'].describe() )

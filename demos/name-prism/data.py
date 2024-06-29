@@ -50,15 +50,8 @@ except:
 
 
 
-import streamlit as st
-import polars as pol
-import plotly.express as px
 import sys, os
 from st_pages import Page, show_pages, add_page_title  # allow multipages
-import utils
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np 
 from streamlit_dynamic_filters import DynamicFilters
 
 from pandas.api.types import (
@@ -66,28 +59,7 @@ from pandas.api.types import (
     is_datetime64_any_dtype,
     is_numeric_dtype,
     is_object_dtype,
-)
-
-
-# ================================ config ================================ 
-st.set_page_config(layout="wide") 
-
-
-# ================================  add paths ================================ 
-sys.path.append(utils.gparent_dir)
-sys.path.append(utils.parent_dir)
-
-data_dir = utils.gparent_dir + '/data/'
-
-# ================================ read data =============================== 
-
-rated_tweets = utils.get_rated_tweets()
-# st.text( utils.regions); # EUR, CAN, USA
-
-st.header('European tweets')
-D1 = rated_tweets[ 'eur']
-D1=D1[ D1['sentiment_confidence'] > 0.66 ]
-
+) 
 
 def color_red_column(col):
     return ['color: red' for _ in col]

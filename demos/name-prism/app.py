@@ -25,3 +25,8 @@ show_pages(
         
     ]
 )
+
+
+f = parent_dir + '/readme.md'
+mkd = Path( f ).read_text()
+st.markdown( mkd )

@@ -40,9 +40,15 @@ st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
 # ============================== read data ==============================
-filepath = parent_dir + '/data/govt-10-immigrants_August+13+2021_17.15'
+filepath = parent_dir + '/data/govt-10-immigrants_August+13+2021_17.15.csv'
 st.text( filepath )
 df = pd.read_csv( Path(filepath ))
+
+
+filepath = parent_dir + '/data/govt-10-omnibus_August+13+2021_17.15.csv'
+st.text( filepath )
+df2 = pd.read_csv( Path(filepath ))
+
 
 mkd = '''
 ## Ethnicities in this dataset

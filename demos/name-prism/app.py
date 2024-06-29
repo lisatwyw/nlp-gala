@@ -30,13 +30,13 @@ show_pages(
 )
 
 
-f = parent_dir + '/readme.md'
-mkd = Path( f ).read_text()
-st.markdown( mkd )
-
+if 0:
+    f = parent_dir + '/readme.md'
+    mkd = Path( f ).read_text()
+    st.markdown( mkd )
 
 filepath = parent_dir + '/data/Popular_Baby_Names.csv'
-df = pd.read_csv( Path(filepath ))
+df = pd.read_csv( Path(filepath))
 
 mkd = '''
 ## Ethnicities in this dataset

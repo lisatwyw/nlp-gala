@@ -92,8 +92,8 @@ with tabs[1]:
 
 
 with tabs[0]:
-    try:
-        S = df.columns     
+    if 1:
+        S = ['name', 'first', 'last' ]
         dynamic_filters = DynamicFilters(df,
                                          filters=S, 
                                          )
@@ -102,13 +102,8 @@ with tabs[0]:
         dynamic_filters.display_filters(location='sidebar')
         dynamic_filters.display_df()   
         new_df = dynamic_filters.filter_df()
-    except Exception as e:
-        st.text( e )
     
-    
-    try:
-      st.write( 'Summary (of filtered subset):')
-      st.write( new_df.Ethnicity.describe()  )
-      st.write( new_df['Child\'s First Name'].describe() )
-    except:
-      pass
+        st.write( 'Summary (of filtered subset):')
+        st.write( new_df.Ethnicity.describe()  )
+        st.write( new_df['Child\'s First Name'].describe() )
+ 

@@ -15,10 +15,7 @@ data_dir = gparent_dir +  '/data/'
 
 
 st.set_page_config(layout="wide")
-st.write(__file__[:-3])
-
-city_name = os.path.basename(__file__)[:-3].capitalize()
-
+st.write(gparent_dir)
 # ============================== read data ==============================
 filepath = gparent_dir + '/data/Popular_Baby_Names.csv'
 

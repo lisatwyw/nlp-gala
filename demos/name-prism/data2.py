@@ -107,7 +107,7 @@ with tabs[1]:
                                          )
         with st.sidebar:
             st.write("Apply filters (in any order)")
-        dynamic_filters.display_filters(location='sidebar')
+        dynamic_filters.display_filters()
         dynamic_filters.display_df()   
         new_df = dynamic_filters.filter_df()
 

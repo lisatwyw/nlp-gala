@@ -11,13 +11,13 @@ import numpy as np
 
 parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
-data_dir = gparent_dir +  '/data/' 
+data_dir = parent_dir +  '/data/' 
 
 
 st.set_page_config(layout="wide")
 st.write(gparent_dir)
 # ============================== read data ==============================
-filepath = gparent_dir + '/data/Popular_Baby_Names.csv'
+filepath = parent_dir + '/data/Popular_Baby_Names.csv'
 
 dat = pd.read_csv( Path(filepath ))
 

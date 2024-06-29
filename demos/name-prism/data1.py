@@ -74,16 +74,15 @@ with tabs[0]:
                                          )
         with st.sidebar:
             st.write("Apply filters in any order")
-        dynamic_filters1.display_filters(location='sidebar')
+        dynamic_filters1.display_filters(location='columns')  # or sidebar, or None
         dynamic_filters1.display_df()   
         new_df1 = dynamic_filters1.filter_df()
+        st.write( 'Summary (of filtered subset):')
+        st.write( new_df1.Ethnicity.describe()  )
+        st.write( new_df1['Child\'s First Name'].describe() )
+
     except Exception as e:
         st.text( e )
     
-    st.write( 'Summary (of filtered subset):')
-    st.write( new_df1.Ethnicity.describe()  )
-    try:
-      st.write( new_df1['Child\'s First Name'].describe() )
-    except:
-      pass
+     
 

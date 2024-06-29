@@ -1,7 +1,7 @@
 import streamlit as st
 from st_pages import Page, show_pages, add_page_title  # allow multipages
 from pathlib import Path
-
+import pandas as pd
 import os, sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)

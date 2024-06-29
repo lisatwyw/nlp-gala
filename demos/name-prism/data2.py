@@ -94,7 +94,10 @@ with tabs[0]:
      
 
 with tabs[1]:
+    st.header('All')
     st.dataframe( df[ ['name','first','last','res.race', 'res.male', 'res.age', 'res.edu', 'res.income'] ] )
+    st.header('')
+    st.dataframe( df[ df['res.race'] == 'Indigeneous' ] )
     
     try:
         S = ['name', 'first', 'last' ]

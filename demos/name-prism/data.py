@@ -69,21 +69,21 @@ with tabs[1]:
 with tabs[0]:
     try:
         S = df.columns 
-        dynamic_filters = DynamicFilters(df,
+        dynamic_filters1 = DynamicFilters(df,
                                          filters=S, 
                                          )
         with st.sidebar:
             st.write("Apply filters in any order")
-        dynamic_filters.display_filters(location='sidebar')
-        dynamic_filters.display_df()   
-        new_df = dynamic_filters.filter_df()
+        dynamic_filters1.display_filters(location='sidebar')
+        dynamic_filters1.display_df()   
+        new_df1 = dynamic_filters1.filter_df()
     except Exception as e:
         st.text( e )
     
     st.write( 'Summary (of filtered subset):')
-    st.write( new_df.Ethnicity.describe()  )
+    st.write( new_df1.Ethnicity.describe()  )
     try:
-      st.write( new_df['Child\'s First Name'].describe() )
+      st.write( new_df1['Child\'s First Name'].describe() )
     except:
       pass
 

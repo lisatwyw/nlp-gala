@@ -40,15 +40,21 @@ st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
 # ============================== read data ==============================
-if 0:
-    filepath = parent_dir + '/data/govt-10-immigrants_August+13+2021_17.15.csv'
-    st.text( filepath )
+
+filepath = parent_dir + '/data/govt-10-immigrants_August+13+2021_17.15.csv'    
+try:
     df = pd.read_csv( Path(filepath ))
-    
-    
-    filepath = parent_dir + '/data/govt-10-omnibus_August+13+2021_17.15.csv'
     st.text( filepath )
+except:
+    pass
+    
+filepath = parent_dir + '/data/govt-10-omnibus_August+13+2021_17.15.csv'
+
+try:
     df2 = pd.read_csv( Path(filepath ))
+    st.text( filepath )
+except:
+    pass
 
 
 filepath = parent_dir + '/data/Names_2010Census_Top1000.xlsx'

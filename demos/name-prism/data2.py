@@ -40,29 +40,32 @@ st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
 # ============================== read data ==============================
-
-# _August+13+2021_17.15
-filepath = parent_dir + '/data/govt-10-immigrants.csv'    
-try:
-    df = pd.read_csv( Path(filepath ))
+@st.cache_data
+def get():
+    # _August+13+2021_17.15
+    filepath = parent_dir + '/data/govt-10-immigrants.csv'    
+    try:
+        df = pd.read_csv( Path(filepath ))
+        st.text( filepath )
+    except:
+        pass
+    
+    # _August+13+2021_17.15
+    filepath = parent_dir + '/data/govt-10-omnibus.csv'    
+    try:
+        df2 = pd.read_csv( Path(filepath ))
+        st.text( filepath )
+    except:
+        pass
+        
+    filepath = parent_dir + '/data/study123.csv'
     st.text( filepath )
-except:
-    pass
+    df = pd.read_csv( Path(filepath), on_bad_lines='skip' )
+    # df = pd.read_excel( Path(filepath), index_col=0 )
+    return df
+    
+df = get()
 
-# _August+13+2021_17.15
-filepath = parent_dir + '/data/govt-10-omnibus.csv'
-
-try:
-    df2 = pd.read_csv( Path(filepath ))
-    st.text( filepath )
-except:
-    pass
-
-
-filepath = parent_dir + '/data/study123.csv'
-st.text( filepath )
-df = pd.read_csv( Path(filepath), on_bad_lines='skip' )
-# df = pd.read_excel( Path(filepath), index_col=0 )
 
 
 mkd = '''

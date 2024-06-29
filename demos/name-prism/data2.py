@@ -84,9 +84,10 @@ tabs= st.tabs( [ 'Summary',''] )
 with tabs[0]:
     for c in df.columns:
         try:
-            fig = px.histogram( df, x = c, title=c.capitalize() )
-            fig.update_layout(hovermode="x unified")    
-            st.plotly_chart( fig )
+            if c != 'id':
+                fig = px.histogram( df, x = c, title=c.capitalize() )
+                fig.update_layout(hovermode="x unified")    
+                st.plotly_chart( fig )
         except:
             pass
      

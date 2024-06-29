@@ -22,7 +22,7 @@ sys.path.append(parent_dir)
 show_pages(
     [
         Page(Path( current_dir, "app.py"), "Home", "🏠", "Home"),
-        Page(Path( current_dir, "data.py"), "Data explorer" ),
+        Page(Path( current_dir, "data.py"), "Data explorer", '', "Data explorer" ),
         
     ]
 )

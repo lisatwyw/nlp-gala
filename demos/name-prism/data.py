@@ -32,3 +32,6 @@ fig.update_layout(hovermode="x unified")
 
 st.plotly_chart( fig )
 st.dataframe( df ) 
+
+
+st.write( df.Ethnicity.describe()  )

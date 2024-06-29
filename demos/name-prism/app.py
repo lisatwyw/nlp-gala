@@ -22,7 +22,7 @@ sys.path.append(parent_dir)
 show_pages(
     [
         Page(Path( current_dir, "app.py"), "Home", "🏠", "home"),
-        Page(Path( current_dir, "data.py"), "Popular baby names in US",  ),
+        Page(Path( current_dir, "data1.py"), "Popular baby names in US",  ),
         Page(Path( current_dir, "data2.py"), "Data from Crabtree et al.",  ),
         Page(Path( current_dir, "data3.py"), "Data dict WVS", ),
         

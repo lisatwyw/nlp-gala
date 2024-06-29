@@ -52,7 +52,7 @@ mkd = '''
 
 st.markdown( mkd )
 st.write( df.shape )
-
+st.text( df.columns )
 
 tabs= st.tabs( ['Filter', 'Summary'] )
 

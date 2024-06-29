@@ -41,7 +41,7 @@ st.write(gparent_dir)
 
 # ============================== read data ==============================
 filepath = parent_dir + '/data/govt-10-immigrants_August+13+2021_17.15'
-
+st.text( filepath )
 df = pd.read_csv( Path(filepath ))
 
 mkd = '''

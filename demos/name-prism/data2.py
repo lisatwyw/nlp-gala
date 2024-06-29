@@ -59,7 +59,7 @@ except:
     pass
 
 
-filepath = parent_dir + '/data/Names_2010Census_Top1000.csv'
+filepath = parent_dir + '/data/study123.csv'
 st.text( filepath )
 df = pd.read_csv( Path(filepath), on_bad_lines='skip' )
 # df = pd.read_excel( Path(filepath), index_col=0 )

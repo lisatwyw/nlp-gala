@@ -79,7 +79,7 @@ tabs= st.tabs( ['Filter', 'Summary'] )
 
 with tabs[1]:
     try:
-        fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
+        fig = px.histogram( df, x = 'SURNAME',  title=f'{1}' )
         fig.update_layout(hovermode="x unified")
         
         #fig.update_xaxes(showspikes=True, spikemode="across")
@@ -104,9 +104,10 @@ with tabs[0]:
     except Exception as e:
         st.text( e )
     
-    st.write( 'Summary (of filtered subset):')
-    st.write( new_df.Ethnicity.describe()  )
+    
     try:
+      st.write( 'Summary (of filtered subset):')
+      st.write( new_df.Ethnicity.describe()  )
       st.write( new_df['Child\'s First Name'].describe() )
     except:
       pass

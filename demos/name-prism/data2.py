@@ -78,6 +78,14 @@ st.dataframe( df )
 
 
 tabs= st.tabs( ['Filter'] )
+
+
+with tabs[1]:
+    fig = px.histogram( df, x = 'w.asian',  title=f'Asians' )
+    fig.update_layout(hovermode="x unified")    
+    st.plotly_chart( fig )
+
+
 with tabs[0]:
     try:
         S = df.columns 

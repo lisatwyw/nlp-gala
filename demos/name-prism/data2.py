@@ -40,13 +40,13 @@ st.set_page_config(layout="wide")
 st.write(gparent_dir)
 
 # ============================== read data ==============================
-filepath = parent_dir + '/data/Popular_Baby_Names.csv'
+filepath = parent_dir + '/data/govt-10-omnibus_August+13+2021_17.12.csv'
 
 df = pd.read_csv( Path(filepath ))
 
 mkd = '''
 ## Ethnicities in this dataset
-- Data source: https://catalog.data.gov/dataset/popular-baby-names
+- Data source: Crabtree et al.
 - Size of dataset:
 '''
 
@@ -57,14 +57,16 @@ st.write( df.shape )
 tabs= st.tabs( ['Filter', 'Summary'] )
 
 with tabs[1]:
-    fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
-    fig.update_layout(hovermode="x unified")
-    
-    #fig.update_xaxes(showspikes=True, spikemode="across")
-    #fig.update_yaxes(showspikes=True, spikemode="across")
-    
-    st.plotly_chart( fig )
-
+    try:
+        fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
+        fig.update_layout(hovermode="x unified")
+        
+        #fig.update_xaxes(showspikes=True, spikemode="across")
+        #fig.update_yaxes(showspikes=True, spikemode="across")
+        
+        st.plotly_chart( fig )
+    except:
+        pass
 
 with tabs[0]:
     try:

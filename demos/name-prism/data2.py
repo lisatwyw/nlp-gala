@@ -67,7 +67,6 @@ def get():
 df2 = get()
 
 
-
 mkd = '''
 ## Ethnicities in this dataset
 - Data source: Crabtree et al.
@@ -99,18 +98,20 @@ with tabs[1]:
     
     st.header('Indigenous only')    
     df2 = df2[ df2['res.race'] == 'Indigenous' ] 
-    st.dataframe( df2 )    
-    try:
-        S = ['res.male', 'res.age', 'res.edu', 'res.income' ]
-        dynamic_filters = DynamicFilters(df2,
-                                         filters=S, 
-                                         )
-        dynamic_filters.display_filters()
-        dynamic_filters.display_df()   
-        new_df = dynamic_filters.filter_df()
-        st.write( 'Summary (of filtered subset):')
-        st.write( new_df['res.age'].describe()  )
-        st.write( new_df['res.edu'].describe() )
-    except:
-        pass
+    st.dataframe( df2 )
+
+    if 0:
+        try:
+            S = ['res.male', 'res.age', 'res.edu', 'res.income' ]
+            dynamic_filters2 = DynamicFilters(df2,
+                                             filters=S, 
+                                             )
+            dynamic_filters2.display_filters()
+            dynamic_filters2.display_df()   
+            new_df2 = dynamic_filters2.filter_df()
+            st.write( 'Summary (of filtered subset):')
+            st.write( new_df2['res.age'].describe()  )
+            st.write( new_df2['res.edu'].describe() )
+        except:
+            pass
  

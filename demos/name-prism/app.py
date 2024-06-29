@@ -29,29 +29,9 @@ show_pages(
     ]
 )
 
-
-if 0:
+if 1:
     f = parent_dir + '/readme.md'
     mkd = Path( f ).read_text()
     st.markdown( mkd )
 
-filepath = parent_dir + '/data/Popular_Baby_Names.csv'
-df = pd.read_csv( Path(filepath))
-
-mkd = '''
-## Ethnicities in this dataset
-- Data source: https://catalog.data.gov/dataset/popular-baby-names
-- Size of dataset:
-'''
-st.markdown( mkd )
-st.write( df.shape )
-
-
-fig = px.histogram( df, x = 'Ethnicity',  title=f'{1}' )
-fig.update_layout(hovermode="x unified")
-
-#fig.update_xaxes(showspikes=True, spikemode="across")
-#fig.update_yaxes(showspikes=True, spikemode="across")
-
-st.plotly_chart( fig )
 

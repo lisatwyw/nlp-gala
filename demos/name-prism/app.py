@@ -37,4 +37,24 @@ if 1:
     mkd = Path( f ).read_text()
     st.markdown( mkd )
 
-
+    mkd = '''
+    | Ethnicity             | N (%)|
+    |:--|:--|
+    |First Nations	|    6301 (1.60)|
+    |Metis	        |    6384 (1.62)|
+    |Inuit	                    |197 (0.05)|
+    |White (European descent)	|301,563 (76.46)|
+    |Chinese	|19,071 (4.84)|
+    |South Asian (eg East Indian, Pakistani, Sri Lankan)|	9892 (2.51)|
+    |Black (eg African or Caribbean)|	1807 (0.45)|
+    |Filipino|	4389 (1.11)|
+    |Latin American / Hispanic|	4722 (1.20)|
+    |Southeast Asian (eg Vietnamese, Cambodian, Malaysian, Laotian)	|2136 (0.54)|
+    |Arab	|1005 (0.25)|
+    |West Asian (eg Iranian, Afghan)|	2072 (0.53)|
+    |Korean|	1324 (0.34)|
+    |Japanese|	2726 (0.69)|
+    |Other|	12,768 (3.24)|
+    |Prefer not to answer	|6682 (0.69)|
+    '''
+    st.markdown( mkd )

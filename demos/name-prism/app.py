@@ -37,24 +37,11 @@ if 1:
     mkd = Path( f ).read_text()
     st.markdown( mkd )
 
-    mkd = '''
-    | Ethnicity             | N (%)|
-    |:--|:--|
-    |First Nations	|    6301 (1.60)|
-    |Metis	        |    6384 (1.62)|
-    |Inuit	                    |197 (0.05)|
-    |White (European descent)	|301,563 (76.46)|
-    |Chinese	|19,071 (4.84)|
-    |South Asian (eg East Indian, Pakistani, Sri Lankan)|	9892 (2.51)|
-    |Black (eg African or Caribbean)|	1807 (0.45)|
-    |Filipino|	4389 (1.11)|
-    |Latin American / Hispanic|	4722 (1.20)|
-    |Southeast Asian (eg Vietnamese, Cambodian, Malaysian, Laotian)	|2136 (0.54)|
-    |Arab	|1005 (0.25)|
-    |West Asian (eg Iranian, Afghan)|	2072 (0.53)|
-    |Korean|	1324 (0.34)|
-    |Japanese|	2726 (0.69)|
-    |Other|	12,768 (3.24)|
-    |Prefer not to answer	|6682 (0.69)|
-    '''
-    st.markdown( mkd )
+    st.text( 'Possible distribution')
+    df = pd.DataFrame( dict( Ethnicity = ['White', 'Chinese','Other',  'South Asian', 'First Nations', 
+                                          'Metis' , 'Latin America/Hispanic', 'Filipino', 'Southeast Asian',
+                                          'Japanese', 'West Asian', 'Black', 'Korean', 'Arab', 'Inuit' ], 
+                            N = [301563,19071,12768,9892,6301,6384,4722,4389,2136,2726,2072,1807,1324,1005,197],
+                            Percentage=[76.46,4.84,3.24,2.51,1.6,1.62,1.2,1.11,.54,.69,.53,0.45,.34,.25,.05,] ))
+    st.dataframe( df )
+     

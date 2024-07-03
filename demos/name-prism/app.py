@@ -29,7 +29,7 @@ show_pages(
         Page(Path( current_dir, "data2.py"), "Data from Crabtree et al.",  ),
         Page(Path( current_dir, "data3.py"), "Data dict WVS", ),
         Page(Path( current_dir, "data4.py"), "Spk. R1", ),
-        
+        Page(Path( current_dir, "data5.py"), "Rare lastnames published in USA 2010", ),        
     ]
 )
 

@@ -37,7 +37,7 @@ if 1:
     mkd = Path( f ).read_text()
     st.markdown( mkd )
 
-    st.text( 'Possible distribution')
+    st.markdown( '# A possible distribution')
     df = pd.DataFrame( dict( Ethnicity = ['White', 'Chinese','Other',  'South Asian', 'First Nations', 
                                           'Metis' , 'Latin America/Hispanic', 'Filipino', 'Southeast Asian',
                                           'Japanese', 'West Asian', 'Black', 'Korean', 'Arab', 'Inuit' ], 

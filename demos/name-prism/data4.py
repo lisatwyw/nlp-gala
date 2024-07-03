@@ -24,7 +24,7 @@ st.set_page_config(layout="wide")
 # ================================ Widgets =============================== 
 
 
-st.markdown( '## A possible distribution')
+st.markdown( '## One possible distribution')
 df = pd.DataFrame( dict( Ethnicity = ['White', 'Chinese','Other',  'South Asian', 'First Nations', 
                                       'Metis' , 'Latin America/Hispanic', 'Filipino', 'Southeast Asian',
                                       'Japanese', 'West Asian', 'Black', 'Korean', 'Arab', 'Inuit' ], 

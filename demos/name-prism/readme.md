@@ -11,8 +11,10 @@ Under construction:
 To understand ethnic inequalities in healthcare
 
 ## Datasets
-
-Coming soon
+- Crabtree et al. 2022
+- Rosenman et al. 2022
+- https://en.wikipedia.org/wiki/List_of_novelists_by_nationality
+- ...
 
 ## Notes
 

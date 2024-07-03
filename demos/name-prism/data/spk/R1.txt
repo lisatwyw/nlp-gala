@@ -1,0 +1,83 @@
+Indicator
+Preventive Personal Hygiene
+No Preventive Actions
+Wash Hands Regularly
+Physical Distancing
+Avoid Gathering
+Stay Home Sick
+Able to Self-Isolate
+Sick Leave
+Work Remotely
+Able to Physical Distance at Work
+Public Health Response Appropriate
+Mental Health Worsening
+Stressed
+Concern for Own Health
+Concern for Vulnerable Family Health
+Perceive Coronavirus Close By
+Perceive Coronavirus Far Away
+Find Coronavirus Thought Consuming
+Rarely Think About Coronavirus
+Feel Control
+Feel Helpless
+Walk/Run/Cycle for Recreation - Less
+Walk/Run/Cycle for Recreation - More
+Commute by Walk/Run/Cycle - Less
+Commute by Walk/Run/Cycle - More
+Fruits and Vegetables - Less
+Fruits and Vegetables - More
+Sleep - Less
+Sleep - More
+Alcohol - More
+Alcohol - Less
+Cannabis - More
+Cannabis - Less
+Smoke - Daily or Occasionally
+One or More Health Conditions
+Difficulty Accessing Healthcare
+Family Doctor-Difficulty Access
+Elective Surgery-Difficulty Access
+Diagnostics-Difficulty Access
+Emergency Care-Difficulty Access
+Preventive Care-Difficulty Access
+Specialist - Difficulty Access
+Complementary Care-Difficulty Access
+Dentist-Difficulty Access
+Counselling-Difficulty Access
+Traditional wellness-Difficulty Access
+Avoid Healthcare
+Family Doctor - Avoid
+Elective Surgery - Avoid
+Diagnostics - Avoid
+Emergency Care - Avoid
+Preventive Care - Avoid
+Specialist - Avoid
+Complementary Care - Avoid
+Dentist - Avoid
+Counselling - Avoid
+Traditional Wellness - Avoid
+Virtual Care Interest
+Childcare - Lost or Removed
+Child Impaired Learning
+Child Stress - More
+Child Stress - Less
+Child Screen Time - More
+Child Screen Time - Less
+Child Connection with Friends - Less
+Child Connection with Friends - More
+Businesses - Comfortable Visiting
+Not Working Due to COVID-19
+Work Impaired
+Financial Stress - Current
+Concern for Food Security
+Financial Stress - Future
+Housing Insecure
+Connection with Family - More
+Connection with Family - Less
+Connection with Friends -  More
+Connection with Friends - Less
+Community Belonging - Strong
+Community Belonging - Weak
+
+
+

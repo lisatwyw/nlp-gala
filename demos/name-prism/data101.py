@@ -1,50 +1,3 @@
-Hugging Face's logo
-Hugging Face
-Search models, datasets, users...
-Models
-Datasets
-Spaces
-Posts
-Docs
-Solutions
-Pricing
-
-
-
-Spaces:
-
-lisatwyw
-/
-name-prism
-
-
-like
-0
-
-Logs
-App
-Files
-Community
-1
-Settings
-name-prism
-/
-app.py
-
-lisatwyw's picture
-lisatwyw
-Update app.py
-67a6bd4
-VERIFIED
-4 days ago
-raw
-history
-blame
-edit
-delete
-No virus
-
-1.01 kB
 import streamlit as st
 from st_pages import Page, show_pages, add_page_title  # allow multipages
 from pathlib import Path
@@ -86,5 +39,4 @@ with tabs[1]:
     st.dataframe(df_m)
 with tabs[2]:
     st.dataframe(df_l)
-
 

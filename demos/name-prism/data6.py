@@ -30,4 +30,4 @@ with open( Path( data_dir, 'vm_age_sex_distr.html') ,'r') as f:
 # ================================  widget ================================ 
 
 st.header("Age and sex distribution in visible minority")
-components.html(html_data, scrolling=True, height=500 ) 
+components.html(html_data, scrolling=True, height=1500 ) 

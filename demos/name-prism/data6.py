@@ -29,7 +29,7 @@ with open( Path( data_dir, 'vm_age_sex_distr.html') ,'r') as f:
 st.title("BCM: about the data")
 st.header("Age and sex distribution in visible minority")
 
-components.html(html_data, scrolling=True, height=900 ) 
+components.html(html_data, scrolling=True, height=600 ) 
 st.text('To examine a group more closely, click on its label.')
 
 st.header("Classification labels")

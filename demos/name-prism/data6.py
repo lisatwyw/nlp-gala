@@ -35,10 +35,12 @@ st.text('To examine a group more closely, click on its label.')
 st.header("Classification labels")
 
 mkd='''
-| | | | | | |
-| :-- | :-- | :-- | :-- | :-- |
-| validated_names | White* | Black | Hispanic | Asian	| Other |
-| rethnicity | [x] |[x] |[x] |[x] | [] | 
+
+
+| Cohort ID | White* | Black | Hispanic | Asian	| Other  |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| validated_names | [x] | [x] | [x] | [x] | [x] | 
+| rethnicity | [x] | [x] | [x] | [x] | [] | 
 | BCM | Not visible minority | | |  | Prefer not tell  |
 | SPK | | | | |
 | ... | | | | |

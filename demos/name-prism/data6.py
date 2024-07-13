@@ -12,6 +12,7 @@ import numpy as np
 import sys, os
 from streamlit_dynamic_filters import DynamicFilters
 
+import streamlit.components.v1 as components  # needed for html
 
 
 parent_dir = str( Path(__file__).parents[0] )

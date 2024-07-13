@@ -40,12 +40,18 @@ st.header("Classification labels")
 mkd='''
 | | | | | | |
 | :-- | :-- | :-- | :-- | :-- |
-| validated_names | white*	| black	| hispanic | asian	| Other |
+| validated_names | White* | Black | Hispanic | Asian	| Other |
+|||||
 
 Other:
 - Indigenous Peoples, African-American, Chipewyan 
 - *Caucasian/ Nordic
 - Indian, Inuk, Inuit, Jew, Jewish, Latin, etc.
+
+## Evaluation metrics
+
+- F1-macro, PPV, FPV
+
 '''
 
 st.markdown(mkd)

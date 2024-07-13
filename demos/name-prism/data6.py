@@ -41,6 +41,8 @@ mkd='''
 | | | | | | |
 | :-- | :-- | :-- | :-- | :-- |
 | validated_names | White* | Black | Hispanic | Asian	| Other |
+| BCM | Not visible minority | | |  | Prefer not tell  |
+| SPK |  |
 |||||
 
 Other:

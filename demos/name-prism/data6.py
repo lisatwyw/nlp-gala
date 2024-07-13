@@ -39,8 +39,8 @@ mkd='''
 
 | Cohort ID | White* | Black | Hispanic | Asian	| Other  |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| validated_names | [x] | [x] | [x] | [x] | [x] | 
-| rethnicity | [x] | [x] | [x] | [x] | [] | 
+| validated_names | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark:  | 
+| rethnicity |  :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  |  | 
 | BCM | Not visible minority | | |  | Prefer not tell  |
 | SPK | | | | |
 | ... | | | | |

@@ -1,19 +1,16 @@
+import os, sys
 import streamlit as st
-import pandas as pd
+from streamlit_dynamic_filters import DynamicFilters
+import streamlit.components.v1 as components  # needed for html
 from st_pages import Page, show_pages, add_page_title  # allow multipages
+
+import numpy as np
+import pandas as pd
+
 from pathlib import Path
 from glob import glob 
 
 import plotly.express as px
-
-import os, sys
-import numpy as np
-
-import sys, os
-from streamlit_dynamic_filters import DynamicFilters
-
-import streamlit.components.v1 as components  # needed for html
-
 
 parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
@@ -41,9 +38,10 @@ mkd='''
 | | | | | | |
 | :-- | :-- | :-- | :-- | :-- |
 | validated_names | White* | Black | Hispanic | Asian	| Other |
+| rethnicity | [x] |[x] |[x] |[x] | [] | 
 | BCM | Not visible minority | | |  | Prefer not tell  |
-| SPK |  |
-|||||
+| SPK | | | | |
+| ... | | | | |
 
 Other:
 - Indigenous Peoples, African-American, Chipewyan 

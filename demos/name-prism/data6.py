@@ -29,8 +29,23 @@ with open( Path( data_dir, 'vm_age_sex_distr.html') ,'r') as f:
 
 # ================================  widget ================================ 
 
+st.title("BCM: about the data")
 st.header("Age and sex distribution in visible minority")
 
+components.html(html_data, scrolling=True, height=1500 ) 
 st.text('To examine a group more closely, click on its label.')
 
-components.html(html_data, scrolling=True, height=1500 ) 
+st.header("Classification labels")
+
+mkd='''
+| | | | | | |
+| :-- | :-- | :-- | :-- | :-- |
+| validated_names | white*	| black	| hispanic | asian	| Other |
+
+Other:
+- Indigenous Peoples, African-American, Chipewyan 
+- *Caucasian/ Nordic
+- Indian, Inuk, Inuit, Jew, Jewish, Latin, etc.
+'''
+
+st.markdown(mkd)

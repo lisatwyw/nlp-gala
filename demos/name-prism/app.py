@@ -26,11 +26,11 @@ show_pages(
     [
         Page(Path( current_dir, "app.py"), "Home", "🏠", "home"),
         Page(Path( current_dir, "data1.py"), "Popular baby names in US",  ),
-        Page(Path( current_dir, "data2.py"), "Data from Crabtree et al.",  ),
-        Page(Path( current_dir, "data3.py"), "Data dict WVS", ),
-        Page(Path( current_dir, "data4.py"), "Spk. R1", ),
-        Page(Path( current_dir, "data5.py"), "Rare lastnames published in USA 2010", ),        
-        Page(Path( current_dir, "data6.py"), "BCM visible minority", ),        
+        Page(Path( current_dir, "data2.py"), "Crabtree",  ),
+        Page(Path( current_dir, "data3.py"), "WVS", ),
+        Page(Path( current_dir, "data4.py"), "SPK-R1", ),
+        Page(Path( current_dir, "data5.py"), "USA2010", ),        
+        Page(Path( current_dir, "data6.py"), "BCM", ),        
     ]
 )
 

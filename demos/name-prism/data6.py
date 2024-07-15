@@ -37,18 +37,22 @@ st.header("Classification labels")
 mkd='''
 
 
-| Cohort ID | White* | Black | Hispanic | Asian	| Other  |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| validated_names | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark:  | 
-| rethnicity |  :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  |  | 
-| BCM | Not visible minority | | |  | Prefer not tell  |
-| SPK | | | | |
-| ... | | | | |
+| Cohort ID | White* | Black | Hispanic | Asian	| Other  | Unknown |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| validated_names | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark:  |  |
+| ```rethnicity``` |  :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  | :heavy_check_mark:  |  |  |
+| BCM | Not visible minority | | |  | | Prefer not tell  | 
+| SPK | | | | | |
+| ... | | | | | |
 
-Other:
-- Indigenous Peoples, African-American, Chipewyan 
-- *Caucasian/ Nordic
-- Indian, Inuk, Inuit, Jew, Jewish, Latin, etc.
+Subcategories to be confirmed:
+- Black 
+    - African-American, ...
+- Indian, Inuk, Inuit, Indigenous Peoples, Chipewyan, ... 
+- *Caucasian 
+    - Nordic, Jew, Jewish, ...   
+- Hispanic
+    - Latin, ...
 
 ## Evaluation metrics
 

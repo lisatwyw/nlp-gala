@@ -23,6 +23,7 @@ st.write(gparent_dir)
 
 # ============================== read data ==============================
 try:
+    st.header('Rare lastnames in 2010 in USA')
     filepath = Path( data_dir, 'USA_rare_lastnames_2010.txt')
     df = pd.read_csv( filepath, sep ='\t' )    
 except Exception as e:

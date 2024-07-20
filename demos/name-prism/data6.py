@@ -57,8 +57,11 @@ mkd='''
 | ... | | | | | |
 
 Subcategories to be confirmed:
-- ***Asian American and Pacific Islander* 
-    - "strangely broad" [source](https://www.npr.org/transcripts/1126642816)
+- ***AAPI = Asian American and Pacific Islander*: strangely broad" [source](https://www.npr.org/transcripts/1126642816)
+    - Asians:
+        - East Asian, South Asian, Southeast Asian 
+    - Native Hawaiian 
+    - Pacific Islanders 
     - "linguistic, religious, socioeconomic diversity" [ibid]
 
 - Black 

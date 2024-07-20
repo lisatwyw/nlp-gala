@@ -30,7 +30,8 @@ show_pages(
         Page(Path( current_dir, "data3.py"), "WVS", ),
         Page(Path( current_dir, "data4.py"), "SPK-R1", ),
         Page(Path( current_dir, "data5.py"), "USA2010", ),        
-        Page(Path( current_dir, "data6.py"), "BCM", ),        
+        Page(Path( current_dir, "data6.py"), "BCM", ),            
+        Page(Path( current_dir, "data7.py"), "n-database", ),        
     ]
 )
 

@@ -25,7 +25,7 @@ st.write(gparent_dir)
 try:
     filepath = Path( data_dir, 'USA_rare_lastnames_2010.txt')
     df = pd.read_csv( filepath, sep ='\n' )    
-except Exeception as e:
+except Exception as e:
     st.text(e)
 
 st.dataframe( df )

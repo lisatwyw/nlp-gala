@@ -14,7 +14,7 @@ import plotly.express as px
 
 parent_dir = str( Path(__file__).parents[0] )
 gparent_dir= str( Path(__file__).parents[1] )
-data_dir = parent_dir +  '/data/' 
+data_dir = parent_dir +  '/data/' + 'n-database' 
 
 st.set_page_config(layout="wide")
 # st.write(gparent_dir)

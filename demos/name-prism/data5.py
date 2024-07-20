@@ -23,8 +23,9 @@ st.write(gparent_dir)
 
 # ============================== read data ==============================
 try:
-    df = pd.read_csv( Path( data_dir, 'USA_rare_lastnames_2010.txt'), sep ='\n' )
-    st.text( filepath )
-except:
-    pass
+    filepath = Path( data_dir, 'USA_rare_lastnames_2010.txt')
+    df = pd.read_csv( filepath, sep ='\n' )    
+except Exeception as e:
+    st.text(e)
+
 st.dataframe( df )

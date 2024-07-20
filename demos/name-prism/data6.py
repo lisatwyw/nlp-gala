@@ -59,6 +59,8 @@ mkd='''
 Subcategories to be confirmed:
 - ```Asian American and Pacific Islander``` 
     - "strangely broad" [source](https://www.npr.org/transcripts/1126642816)
+    - ``linguistic, religious, socioeconomic diversity'' [ibid]
+
 - Black 
     - African-American, ...
 - Indian, Inuk, Inuit, Indigenous Peoples, Chipewyan, ... 
@@ -67,9 +69,10 @@ Subcategories to be confirmed:
 - Hispanic
     - Latin, ...
 
+
 ## Evaluation metrics
 
-- F1-macro, PPV, FPV
+- F1-macro, PPV, FPV, AUC
 
 '''
 

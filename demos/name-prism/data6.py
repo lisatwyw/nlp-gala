@@ -63,14 +63,13 @@ Subcategories to be confirmed:
     - Native Hawaiian 
     - Pacific Islanders 
     - "linguistic, religious, socioeconomic diversity" [ibid]
-
 - Black 
     - African-American, ...
 - Indian, Inuk, Inuit, Indigenous Peoples, Chipewyan, ... 
 - *Caucasian 
     - Nordic, Jew, Jewish, ...   
-- Hispanic
-    - Latin, ...
+- Hispanic: Spanish origin
+    - Latin: origins of Latin America (Mexico, South and Central America) and the Caribbean.
 
 
 ## Evaluation metrics

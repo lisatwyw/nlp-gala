@@ -57,9 +57,9 @@ mkd='''
 | ... | | | | | |
 
 Subcategories to be confirmed:
-- ```Asian American and Pacific Islander``` 
+- ***Asian American and Pacific Islander* 
     - "strangely broad" [source](https://www.npr.org/transcripts/1126642816)
-    - ``linguistic, religious, socioeconomic diversity'' [ibid]
+    - "linguistic, religious, socioeconomic diversity" [ibid]
 
 - Black 
     - African-American, ...

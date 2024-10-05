@@ -4,6 +4,7 @@
 
 - https://pcc-discourse.streamlit.app/ [archived elsewhere]
 - https://nlp-proto-1.streamlit.app/ [archived elsewhere]
+- https://disinfo.streamlit.app/ [archived elsewhere]
 - https://city-minutes.streamlit.app/ [archived in this repo]
 - https://name-prism.streamlit.app/ [archived in this repo]
 

@@ -10,6 +10,9 @@ Below are examples implemented in Python Streamlit
 - [City council minutes](https://city-minutes.streamlit.app/) [archived in this repo]
 - [Characteristics of a cohort](https://name-prism.streamlit.app/) [archived in this repo]
 
+To launch each of above app, please click on the blue buttom ```Yes, get this app back up!'''
+
+## Citations
 
 Please consider citing this repo: 
 ```

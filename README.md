@@ -2,11 +2,13 @@
 
 ## Examples
 
-- https://pcc-discourse.streamlit.app/ [archived elsewhere]
-- https://nlp-proto-1.streamlit.app/ [archived elsewhere]
-- https://disinfo.streamlit.app/ [archived elsewhere]
-- https://city-minutes.streamlit.app/ [archived in this repo]
-- https://name-prism.streamlit.app/ [archived in this repo]
+Below are examples implemented in Python Streamlit
+
+- [COVID19 discourse](https://pcc-discourse.streamlit.app/) [archived elsewhere]
+- [Interpreting tweets](https://nlp-proto-1.streamlit.app/) [archived elsewhere]
+- [Disinformation](https://disinfo.streamlit.app/) [archived elsewhere]
+- [City council minutes](https://city-minutes.streamlit.app/) [archived in this repo]
+- [Characteristics of a cohort](https://name-prism.streamlit.app/) [archived in this repo]
 
 
 Please consider citing this repo: 

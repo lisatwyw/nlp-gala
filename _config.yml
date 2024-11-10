@@ -1,0 +1,21 @@
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - CONTRIBUTING.md
+  - README.md
+  - LICENSE.md
+  - COPYING.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - ISSUE_TEMPLATE.md
+  - PULL_REQUEST_TEMPLATE.md
+# this version will render table properly https://github.com/orgs/community/discussions/23945
+title: npl-gala
+markdown: GFM
+show_downloads: false
+google_analytics: G-966JZZV0M0
+theme: jekyll-theme-cayman
+# jekyll-theme-merlot

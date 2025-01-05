@@ -15,13 +15,34 @@ Will match phone numbers, e.g. these strings:
 - ✅(917)5551298
 - ✅212.555.8731
 
+## Anchor tags
+
+```
+^T
+```
+- Must start with capitalized ```T```
+
+```
+$?
+```
+- Must end with ```?```
+
+The anchor tags ^ and $ will match text at the start of a string and at the end of a string, respectively.
+
+
 ## Range
 
 ```
 h{1,2}t 
 ```
+- Will match ```hot``` but not ```hooot```
 
-will match ```hot``` but not ```hooot```
+
+```
+[r-t]at
+```
+- Will match ```rat```, ```sat```, ```tat```, but not ```bat```
+
 
 ## ```?```: 0 or 1 instance of the preceeding character 
 

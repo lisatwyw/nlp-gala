@@ -29,3 +29,11 @@ will match:
 \w{1} \w+ \d* \w+!
 ```
 will NOT match: ```I love snakes!``` because there's only 1 whte space between t ```\w+``` and ```\w+!```
+
+## Negation
+
+```
+[^cdh]are
+```
+
+will not match ```care```, '''dare``` but will match ```mare```

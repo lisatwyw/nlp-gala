@@ -22,3 +22,10 @@ Will match phone numbers, e.g. these strings:
 will match:
 
 ```1 crazy shark``` and ```3 crazy sharks```
+
+## 
+
+```
+\w{1} \w+ \d* \w+!
+```
+will NOT match: ```I love snakes!``` because there's only 1 whte space between t ```\w+``` and ```\w+!```

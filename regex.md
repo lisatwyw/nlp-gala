@@ -44,6 +44,21 @@ h{1,2}t
 - Will match ```rat```, ```sat```, ```tat```, but not ```bat```
 
 
+## Negation
+
+```
+[^cdh]are
+```
+
+- Will not match ```care```, '''dare``` but will match ```mare```
+
+## Metacharacter
+
+- ```+``` will match the preceding character 1 or more times 
+- ```*``` will match the preceding character 0 or more times
+
+```o+hh``` will match ```oooooohh``` but not ```hh```
+
 ## ```?```: 0 or 1 instance of the preceeding character 
 
 ```
@@ -58,12 +73,6 @@ will match:
 ```
 \w{1} \w+ \d* \w+!
 ```
-will NOT match: ```I love snakes!``` because there's only 1 whte space between t ```\w+``` and ```\w+!```
+- Will NOT match: ```I love snakes!``` because there's only 1 whte space between t ```\w+``` and ```\w+!```
 
-## Negation
 
-```
-[^cdh]are
-```
-
-will not match ```care```, '''dare``` but will match ```mare```

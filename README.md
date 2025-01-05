@@ -12,6 +12,11 @@ Below are examples implemented in Python Streamlit
 
 To launch each of above app, please click on the blue buttom ```Yes, get this app back up!```
 
+## Tutorials
+
+- [Regular expressions - examples](regexp.md)
+
+
 ## Citations
 
 Please consider citing this repo: 

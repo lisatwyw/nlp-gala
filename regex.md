@@ -1,5 +1,6 @@
 # Regular expressions ```re```
 
+Examples of regular expressions
 
 ## Phone numbers
 ```
@@ -13,6 +14,14 @@ Will match phone numbers, e.g. these strings:
 - ✅1 212 555 3821
 - ✅(917)5551298
 - ✅212.555.8731
+
+## Range
+
+```
+h{1,2}t 
+```
+
+will match ```hot``` but not ```hooot```
 
 ## ```?```: 0 or 1 instance of the preceeding character 
 
